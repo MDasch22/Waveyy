@@ -1,4 +1,4 @@
-# Welcome to react-solo-project
+# Welcome to WaVeZ
 
 Developer: Michael Dasch 
 
