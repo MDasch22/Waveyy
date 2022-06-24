@@ -1,0 +1,20 @@
+{
+  "name": "waveyy",
+  "version": "1.0.0",
+  "description": "Developer: Michael Dasch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MDasch22/Waveyy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MDasch22/Waveyy/issues"
+  },
+  "homepage": "https://github.com/MDasch22/Waveyy#readme"
+}
