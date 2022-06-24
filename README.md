@@ -2,7 +2,7 @@
 
 Developer: Michael Dasch 
 
-Explore the docs to see how to get started --> 
+Explore the docs to see how to get [started](https://github.com/MDasch22/Waveyy/wiki) --> 
 
 ## Overview
 
