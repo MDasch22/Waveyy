@@ -87,7 +87,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     User.hasMany(models.Review, {foreignKey: 'userId', onDelete: 'CASCADE', hooks: true})
-    User.hasMnay(models.Beach, {foreignKey: 'ownerId', onDelete: 'CASCASE', hooks: true})
+    User.hasMany(models.Beach, {foreignKey: 'ownerId', onDelete: 'CASCASE', hooks: true})
   };
 
   return User;
