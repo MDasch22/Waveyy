@@ -6,7 +6,7 @@ import './beaches.css'
 
 export default function Beaches() {
   const dispatch = useDispatch();
-  console.log(hello)
+
 
   useEffect(() => {
     dispatch(thunkGetAllBeaches())
