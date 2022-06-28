@@ -9,7 +9,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       coverImg: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
       ownerId: {

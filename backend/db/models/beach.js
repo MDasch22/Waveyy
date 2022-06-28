@@ -1,7 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Beach = sequelize.define('Beach', {
-    coverImg: DataTypes.STRING,
     ownerId: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
@@ -11,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     zipCode: DataTypes.STRING
   }, {});
   Beach.associate = function(models) {
-    Beach.hasMany(models.Review, { as: 'reviews', foreignKey: 'beachId', onDelete: 'cascade', hooks: 'true'})
+    Beach.hasMany(models.Review, { as: 'review', foreignKey: 'beachId'})
     Beach.belongsTo(models.User, { foreignKey: 'ownerId'})
   };
   return Beach;
