@@ -42,6 +42,7 @@ const actionDeleteBeach = (beachId) => {
 export const thunkGetAllBeaches = () => async dispatch => {
   const response = await csrfFetch('/api/beaches');
   if(response.ok) {
+    console.log('hello')
     const data = await response.json();
     dispatch(actionGetBeach(data));
     return response;
