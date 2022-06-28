@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import Beaches from "./components/Beaches";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,12 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/api/beaches">
+            <Beaches />
+          </Route>
+          <Route>
+            <h1>404: Hmmm Doesnt seem to be anything here</h1>
           </Route>
         </Switch>
       )}

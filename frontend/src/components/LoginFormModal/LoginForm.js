@@ -51,7 +51,7 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
-      <Link onClick={demoSubmit}>Continue as Guest</Link>
+      <button onClick={demoSubmit}>Continue as Guest</button>
     </form>
   );
 }

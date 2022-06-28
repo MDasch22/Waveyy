@@ -1,0 +1,44 @@
+#title{
+  text-align: center;
+}
+
+.beachContainer {
+  display: inline;
+  float: left;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px;
+  width: 350px;
+  height: 350px;
+  background-image: url("https://previews.123rf.com/images/warongdech/warongdech1605/warongdech160500343/56857919-surface-of-swimming-pool-water-background-.jpg");
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#beachCoverImg{
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ margin-bottom: 40px;
+ width: 100%;
+}
+
+#beachImg {
+  width: 350px;
+  height: 230px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+
+.createBeachBttn{
+  height: 80px;
+  line-height: 80px;
+  width: 80px;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #5ab1eb;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
