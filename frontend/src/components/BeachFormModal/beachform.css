@@ -1,0 +1,12 @@
+.createBeachBttn{
+  height: 70px;
+  line-height: 50px;
+  width: 70px;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #5ab1eb;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

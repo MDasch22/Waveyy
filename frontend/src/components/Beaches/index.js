@@ -1,6 +1,8 @@
 import React, { useState , useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { thunkGetAllBeaches } from '../../store/beaches';
+import CreateBeachModal from '../BeachFormModal';
+
 import './beaches.css'
 
 
@@ -12,25 +14,29 @@ export default function Beaches() {
     dispatch(thunkGetAllBeaches())
   }, [dispatch])
 
+
   const beachArr = useSelector(state => Object.values(state.beaches))
+  const sessionUser = useSelector(state => state.session.user);
 
 
   return (
     <>
       <img id='beachCoverImg'src="https://cdn.wallpapersafari.com/10/9/VHfU1r.gif"></img>
-      <h1 id="title"> 🌴 Find your Beach 🌴</h1>
-        <button className='createBeachBttn'>
-          +
-        </button>
+      <h1 id="title">🌴 Find your Beach 🌴</h1>
+      {sessionUser &&
+      <>
+        <CreateBeachModal />
+      </>
+      }
       <div className='beachCard'>
         {beachArr.map(beach => {
           return (
-            <div className='beachContainer'>
-              <a href={`/api/beaches/${beach.id}`} key={beach.id}>
+            <div key={beach.id} className='beachContainer'>
+              <a href={`/beaches/${beach.id}`}>
                 <img src={beach.coverImg} alt="coverImg" id="beachImg"></img>
                 <h3 id="beachContent">{beach.title}</h3>
               </a>
-              <p id="beachContent">{beach.city} {beach.country}</p>
+              <p>{beach.city} {beach.country}</p>
             </div>
             )
           })

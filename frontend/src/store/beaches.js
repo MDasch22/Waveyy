@@ -42,7 +42,6 @@ const actionDeleteBeach = (beachId) => {
 export const thunkGetAllBeaches = () => async dispatch => {
   const response = await csrfFetch('/api/beaches');
   if(response.ok) {
-    console.log('hello')
     const data = await response.json();
     dispatch(actionGetBeach(data));
     return response;
@@ -50,9 +49,21 @@ export const thunkGetAllBeaches = () => async dispatch => {
   return await response.json()
 };
 
+export const thunkCreateBeach = (beach) => async dispatch => {
+  const response = await csrfFetch('/api/beaches', {
+    method: "POST",
+    headers: {'Content-Type': "application/json"},
+    body: JSON.stringify(beach),
+  });
+  if(response.ok) {
+    const data = await response.json();
+    dispatch(actionCreateBeach(data));
+    return response;
+  }
+};
+
 
 //TODO REDUCER
-
 const beaches = (state = {}, action) => {
 
   let newState = {...state}
@@ -64,6 +75,9 @@ const beaches = (state = {}, action) => {
     })
       return newState
 
+    case CREATE_BEACH:
+      newState[action.beach.id] = action.beach
+      return newState
     case DELETE_BEACH:
       delete newState[action.beachId]
     default:
