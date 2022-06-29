@@ -15,8 +15,6 @@ export default function BeachId() {
 
   const sessionUser = useSelector(state => state.session.user);
 
-  // const theBeach = beach[beachId]
-
   useEffect(() => {
     dispatch(thunkGetBeach(beachId))
   },[dispatch])
@@ -26,26 +24,39 @@ export default function BeachId() {
     history.push('/beaches')
   }
 
+  if(!beach){
+    return null
+  }
+
+  if(!sessionUser) {
+    return (
+      <>
+        <img src={beach.coverImg}></img>
+        <h1>{beach.title}</h1>
+        <h2>{beach.city} {beach?.country}</h2>
+        <p>{beach.description}</p>
+      </>
+      )
+  }
+
   return (
     <>
-    {beach &&
       <>
-      <img src={beach.coverImg}></img>
-      <h1>{beach.title}</h1>
-      <h2>{beach.city} {beach?.country}</h2>
-      <p>{beach.description}</p>
+        <img src={beach.coverImg}></img>
+        <h1>{beach.title}</h1>
+        <h2>{beach.city} {beach?.country}</h2>
+        <p>{beach.description}</p>
       </>
-      }
-      {sessionUser.id === beach?.ownerId &&
+      {sessionUser.id === beach.ownerId &&
         (
           <>
-          <EditFormModal />
-          <button
-          onClick={onDelete}>
-          Delete
-          </button>
+            <EditFormModal />
+            <button
+            onClick={onDelete}>
+            Delete
+            </button>
           </>
-          )
+        )
       }
     </>
   )
