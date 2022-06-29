@@ -91,6 +91,19 @@ export const thunkCreateBeach = (beach) => async dispatch => {
   }
 };
 
+export const thunkUpdateBeach = (beach) => async dispatch => {
+  const response = await csrfFetch(`/api/beaches/${beach.id}`, {
+    method: "PUT",
+    headers: {'Content-Type': "application/json"},
+    body: JSON.stringify(beach),
+  });
+  if(response.ok) {
+    const data = await response.json();
+    dispatch(actionUpdateBeach(data));
+    return data;
+  }
+};
+
 export const thunkDeleteBeach = (beachId) => async dispatch => {
   const response = await csrfFetch(`/api/beaches/${beachId}`, {
     method: "DELETE",
@@ -123,6 +136,10 @@ const beaches = (state = {}, action) => {
         return newState
 
     case CREATE_BEACH:
+      newState[action.beach.id] = action.beach
+      return newState
+
+    case UPDATE_BEACH:
       newState[action.beach.id] = action.beach
       return newState
 

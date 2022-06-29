@@ -52,6 +52,19 @@ router.post('/', requireAuth, asyncHandler(async(req, res) => {
 
 }))
 
+// ------------------UPDATE BEACH------------------//
+router.put('/:beachId', asyncHandler(async(req, res) => {
+  const beachId = req.params.beachId
+  const beach = await Beach.findByPk(beachId)
+
+  await beach.update(req.body);
+
+  return res.json(beach)
+}))
+
+
+
+// ------------------DELETE BEACH------------------//
 router.delete('/:beachId', asyncHandler( async(req, res) => {
   const beachId = req.params.beachId
 

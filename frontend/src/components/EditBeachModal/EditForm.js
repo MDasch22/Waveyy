@@ -1,59 +1,68 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
-import { thunkCreateBeach } from '../../store/beaches';
+import { thunkUpdateBeach } from '../../store/beaches';
 
 
 export default function EditForm(props) {
   const { beachId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  const sessionBeach = useSelector(state => state.beach);
-  const theBeach = sessionBeach[beachId]
 
-  const [coverImg, setCoverImg] = useState(theBeach.coverImg);
-  const [title , setTitle] = useState(theBeach.title);
-  const [description , setDescription] = useState(theBeach.description);
-  const [address , setAddress] = useState(theBeach.address);
-  const [city , setCity] = useState(theBeach.city);
-  const [country , setCountry] = useState(theBeach.country);
-  const [zipCode , setZipCode] = useState(theBeach.zipCode);
+  const beach = useSelector(state=> state.beaches[beachId]);
+  const sessionUser = useSelector(state => state.session.user);
 
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const [coverImg, setCoverImg] = useState(beach.coverImg);
+  const [title , setTitle] = useState(beach.title);
+  const [description , setDescription] = useState(beach.description);
+  const [address , setAddress] = useState(beach.address);
+  const [city , setCity] = useState(beach.city);
+  const [country , setCountry] = useState(beach.country);
+  const [zipCode , setZipCode] = useState(beach.zipCode);
 
-  //   const newBeach = {
-  //     coverImg,
-  //     ownerId: sessionUser.id,
-  //     title,
-  //     description,
-  //     address,
-  //     city,
-  //     country,
-  //     zipCode,
-  //   }
 
-  //   if(newBeach) {
-  //     dispatch(thunkCreateBeach(newBeach))
-  //   }
-  //   setCoverImg('');
-  //   setTitle('')
-  //   setDescription('')
-  //   setAddress('')
-  //   setCity('')
-  //   setCountry('')
-  //   setZipCode('')
-  //   props.setTrigger(false)
-  // }
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    const newBeach = {
+      ...beach,
+      coverImg,
+      ownerId: sessionUser.id,
+      title,
+      description,
+      address,
+      city,
+      country,
+      zipCode,
+    }
+
+    const updatedBeach = await dispatch(thunkUpdateBeach(newBeach))
+
+    if(updatedBeach) {
+      reset()
+    }
+
+  }
+  const reset = () => {
+    setCoverImg('');
+    setTitle('')
+    setDescription('')
+    setAddress('')
+    setCity('')
+    setCountry('')
+    setZipCode('')
+    props.setTrigger(false)
+  }
+
 
   return (
     <>
       <section className="beachForm">
-        <h1>Editing {title}</h1>
+        <h1>Editing</h1>
         <form
         className='createNewBeach'
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         // hidden={formView}
         >
           <input
