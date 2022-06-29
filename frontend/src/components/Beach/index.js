@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useHistory, NavLink, Link } from 'react-router-dom'
-import { thunkGetBeach, thunkDeleteBeach } from '../../store/beach';
-import { thunkGetAllBeaches } from '../../store/beaches';
+import { thunkGetBeach, thunkDeleteBeach } from '../../store/beaches';
 import EditFormModal from '../EditBeachModal';
 
 
@@ -11,34 +10,40 @@ export default function BeachId() {
   const dispatch = useDispatch();
   const { beachId } = useParams();
 
-  const beaches = useSelector(state => state.beaches)
 
-  const beach = useSelector(state=> state.beach);
+  const beach = useSelector(state=> state.beaches[beachId]);
 
   const sessionUser = useSelector(state => state.session.user);
 
-  const theBeach = beaches[beachId]
+  // const theBeach = beach[beachId]
 
   useEffect(() => {
     dispatch(thunkGetBeach(beachId))
   },[dispatch])
 
-
+  const onDelete = async() => {
+    await dispatch(thunkDeleteBeach(beachId))
+    history.push('/beaches')
+  }
 
   return (
     <>
-      <img src={theBeach.coverImg}></img>
-      <h1>{theBeach.title}</h1>
-      <h2>{theBeach.city} {theBeach.country}</h2>
-      <p>{theBeach.description}</p>
-      {sessionUser.id === theBeach.ownerId &&
+    {beach &&
+      <>
+      <img src={beach.coverImg}></img>
+      <h1>{beach.title}</h1>
+      <h2>{beach.city} {beach?.country}</h2>
+      <p>{beach.description}</p>
+      </>
+      }
+      {sessionUser.id === beach?.ownerId &&
         (
           <>
-            <EditFormModal />
-            <button
-            onClick={() => dispatch(thunkDeleteBeach(theBeach.id))}>
-              Delete
-            </button>
+          <EditFormModal />
+          <button
+          onClick={onDelete}>
+          Delete
+          </button>
           </>
           )
       }
