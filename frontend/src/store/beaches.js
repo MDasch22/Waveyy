@@ -1,40 +1,27 @@
 import { csrfFetch } from "./csrf"
 
 //TODO DEFINE TYPES
-  //READ
-const GET_BEACHS = 'beaches/getBeach'
+
+const GET_BEACHS = 'beaches/getBeachs'
   //CREATE
 const CREATE_BEACH = 'beaches/createBeach'
   //UPDATE
-const UPDATE_BEACH = 'beaches/createBeach'
-  //DELETE
-const DELETE_BEACH = 'beaches/deleteBeach'
 
 // TODO ACTION CREATOR
-const actionGetBeach = (beaches) => {
+
+const actionGetBeachs = (beaches) => {
  return {
     type: GET_BEACHS,
     beaches
   }
 }
-const actionCreateBeach = (beach) => {
+const actionCreateBeachs = (beach) => {
  return {
     type: CREATE_BEACH,
     beach
   }
 }
-const actionUpdateBeach = (beach) => {
- return {
-    type: UPDATE_BEACH,
-    beach
-  }
-}
-const actionDeleteBeach = (beachId) => {
- return {
-    type: DELETE_BEACH,
-    beachId
-  }
-}
+
 
 
 // TODO THUNKS
@@ -43,7 +30,7 @@ export const thunkGetAllBeaches = () => async dispatch => {
   const response = await csrfFetch('/api/beaches');
   if(response.ok) {
     const data = await response.json();
-    dispatch(actionGetBeach(data));
+    dispatch(actionGetBeachs(data));
     return response;
   }
   return await response.json()
@@ -57,7 +44,7 @@ export const thunkCreateBeach = (beach) => async dispatch => {
   });
   if(response.ok) {
     const data = await response.json();
-    dispatch(actionCreateBeach(data));
+    dispatch(actionCreateBeachs(data));
     return response;
   }
 };
@@ -69,6 +56,7 @@ const beaches = (state = {}, action) => {
   let newState = {...state}
 
   switch (action.type) {
+
     case GET_BEACHS:
     action.beaches.forEach(beach => {
       newState[beach.id] = beach;
@@ -78,8 +66,7 @@ const beaches = (state = {}, action) => {
     case CREATE_BEACH:
       newState[action.beach.id] = action.beach
       return newState
-    case DELETE_BEACH:
-      delete newState[action.beachId]
+
     default:
       return state;
   };

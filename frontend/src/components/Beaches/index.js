@@ -1,5 +1,6 @@
-import React, { useState , useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { thunkGetAllBeaches } from '../../store/beaches';
 import CreateBeachModal from '../BeachFormModal';
 
@@ -10,9 +11,11 @@ export default function Beaches() {
   const dispatch = useDispatch();
 
 
+
   useEffect(() => {
     dispatch(thunkGetAllBeaches())
   }, [dispatch])
+
 
 
   const beachArr = useSelector(state => Object.values(state.beaches))
@@ -32,10 +35,10 @@ export default function Beaches() {
         {beachArr.map(beach => {
           return (
             <div key={beach.id} className='beachContainer'>
-              <a href={`/beaches/${beach.id}`}>
+              <Link to={`/beaches/${beach.id}`}>
                 <img src={beach.coverImg} alt="coverImg" id="beachImg"></img>
                 <h3 id="beachContent">{beach.title}</h3>
-              </a>
+              </Link>
               <p>{beach.city} {beach.country}</p>
             </div>
             )
