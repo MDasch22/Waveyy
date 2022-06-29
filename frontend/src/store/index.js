@@ -2,10 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from './session';
 import beaches from "./beaches";
+import beach from './beach'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  beaches
+  beaches,
+  beach
 });
 
 let enhancer;

@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Beaches from "./components/Beaches";
 import BeachForm from "./components/BeachFormModal/BeachForm";
+import BeachId from "./components/Beaches/BeachId";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/beaches">
             <Beaches />
+          </Route>
+          <Route path='/beaches/:beachId'>
+            <BeachId />
           </Route>
         </Switch>
       )}

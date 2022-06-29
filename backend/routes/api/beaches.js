@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
-const { Beach, User} = require('../../db/models')
+const { Beach, User, Review} = require('../../db/models')
 const { requireAuth } = require('../../utils/auth')
 
 
@@ -40,6 +40,14 @@ router.post('/', requireAuth, asyncHandler(async(req, res) => {
   return res.json(beach)
 
 }))
+
+router.get("/:beachId", async(req, res) => {
+  const beachId = req.params.beachId
+  const beach = await Beach.findByPk(beachId)
+
+  return res.json(beach)
+
+})
 
 
 module.exports = router;
