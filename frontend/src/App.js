@@ -7,7 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Beaches from "./components/Beaches";
 import BeachForm from "./components/BeachFormModal/BeachForm";
-import BeachId from "./components/Beaches/BeachId";
+import BeachId from "./components/Beach";
 
 function App() {
   const dispatch = useDispatch();

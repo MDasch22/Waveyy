@@ -1,19 +1,30 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
-const { Beach, User, Review} = require('../../db/models')
+const { Beach, User,} = require('../../db/models')
 const { requireAuth } = require('../../utils/auth')
 
 
 const router = express.Router()
 
-//get all beaches
+// ------------------GET ALL BEACHES------------------//
 router.get('/', async (req, res) => {
   const beaches = await Beach.findAll({
   });
   return res.json(beaches)
 })
 
+// ------------------GET SINGLE BEACH------------------//
+router.get("/:beachId", async(req, res) => {
+  const beachId = req.params.beachId
+  const beach = await Beach.findByPk(beachId)
+
+
+  return res.json(beach)
+
+})
+
+// ------------------CREATE NEW BEACH------------------//
 router.post('/', requireAuth, asyncHandler(async(req, res) => {
 
   const {
@@ -41,13 +52,15 @@ router.post('/', requireAuth, asyncHandler(async(req, res) => {
 
 }))
 
-router.get("/:beachId", async(req, res) => {
+router.delete('/:beachId', asyncHandler( async(req, res) => {
   const beachId = req.params.beachId
-  const beach = await Beach.findByPk(beachId)
 
-  return res.json(beach)
+  const beach = await Beach.findByPk(beachId);
 
-})
+  await beach.destroy();
+
+  return res.json({success: true});
+}))
 
 
 module.exports = router;

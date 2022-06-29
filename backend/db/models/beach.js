@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     zipCode: DataTypes.STRING
   }, {});
   Beach.associate = function(models) {
-    Beach.hasMany(models.Review, { as: 'reviews', foreignKey: 'beachId', onDelete: 'cascade', hooks: 'true'})
+    Beach.hasMany(models.Review, { foreignKey: 'beachId'})
     Beach.belongsTo(models.User, { foreignKey: 'ownerId'})
   };
   return Beach;
