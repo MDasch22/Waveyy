@@ -78,7 +78,7 @@ export default function EditForm(props) {
   return (
     <>
       <section className="beachForm">
-        <h1>Editing</h1>
+        <h1>Editing {beach.title}</h1>
         <form className="createNewBeach" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
             <div>
