@@ -5,12 +5,16 @@ const { Beach, User, Review} = require('../../db/models')
 
 const router = express.Router()
 
-router.get('/:beachId', async(req, res) => {
-  const beachId = req.params.beachId
-  const reviews = await Review.findAll({
-    where: { beachId }
-  })
-  return res.json(reviews)
-})
+
+//----------------DELETE REVIEW------------------//
+router.delete('/:reviewId', asyncHandler(async(req, res) => {
+  const reviewId = req.params.reviewId
+
+  const review = await Review.findByPk(reviewId);
+  await review.destroy();
+
+  return res.json({success: true});
+}))
+
 
 module.exports = router;

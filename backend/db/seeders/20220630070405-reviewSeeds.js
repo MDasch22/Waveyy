@@ -48,7 +48,7 @@ module.exports = {
           userId: 3,
           beachId: 2,
           rating: 4,
-          comment: "Del Mar beach was a really cool beach, a lot different from the beaches on the east coast.",
+          comment: "Point Dume was a really cool beach, a lot different from the beaches on the east coast.",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

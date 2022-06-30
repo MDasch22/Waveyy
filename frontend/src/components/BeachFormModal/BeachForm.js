@@ -21,15 +21,18 @@ export default function BeachForm(props) {
   useEffect(() => {
     const errors = [];
     if (!coverImg) errors.push("Please provide a valid beach image ");
-    if (!title || title.length < 2) errors.push("Please Provide a valid beach title");
-    if (!description || description.length < 5) errors.push("Please provide a description of the beach");
-    if (!address || address.length < 3)
+    if (!title || title.length < 2 || title.length > 50)
+      errors.push("Please Provide a valid beach title");
+    if (!description || description.length < 5)
+      errors.push("Please provide a description of the beach");
+    if (!address || address.length < 3 || address.length > 50)
       errors.push("Please provide a valid address");
-    if (!city || city.length < 1)
+    if (!city || city.length < 1 || city.length > 20)
       errors.push("Please provide the city where the beach is located");
-    if (!country || city.length < 3)
+    if (!country || country.length < 3 || country.length > 20)
       errors.push("Please provide the country where the beach is located");
-    if (!zipCode || zipCode.length < 4) errors.push("Please provide the ZIP Code");
+    if (!zipCode || zipCode.length < 4 || zipCode.length > 5)
+      errors.push("Please provide the ZIP Code");
     setValidationErrors(errors);
   }, [coverImg, title, description, address, city, country, zipCode]);
 
@@ -37,7 +40,7 @@ export default function BeachForm(props) {
     e.preventDefault();
 
     setHasSubmitted(true);
-    console.log(validationErrors)
+    console.log(validationErrors);
     if (validationErrors.length) return alert("Cannot Submit");
 
     const newBeach = {
