@@ -1,11 +1,37 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
+const { requireAuth } = require('../../utils/auth');
+const { handleValidationErrors } = require('../../utils/validation');
 const { Beach, User,} = require('../../db/models')
-const { requireAuth } = require('../../utils/auth')
-
 
 const router = express.Router()
+
+// const validateCreate = [
+//   check('coverImg')
+//     .exists({checkFalsy: true})
+//     .withMessage("Please provide an image of the beach!"),
+//   check('title')
+//     .exists({checkFalsy: true })
+//     .withMessage("Please provide the name of the beach!"),
+//   check('description')
+//     .exists({checkFalsy: true })
+//     .withMessage("Please provide a description of the beach!"),
+//   check('address')
+//     .exists({checkFalsy: true})
+//     .withMessage("Please provide an address of the beach!"),
+//   check('city')
+//     .exists({checkFalsy: true })
+//     .withMessage("Please provide the city where the beach is located!"),
+//   check('country')
+//     .exists({checkFalsy: true })
+//     .withMessage("Please provide the country where the beach is located!"),
+//   check('zipCode')
+//     .exists({checkFalsy: true })
+//     .withMessage("Please provide the ZIP Code!"),
+//   handleValidationErrors
+// ]
+
 
 // ------------------GET ALL BEACHES------------------//
 router.get('/', async (req, res) => {
