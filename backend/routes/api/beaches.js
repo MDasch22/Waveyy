@@ -104,4 +104,27 @@ router.delete('/:beachId', asyncHandler( async(req, res) => {
 }))
 
 
+router.get('/:beachId/reviews', asyncHandler(async(req, res) => {
+  const beachId = req.params.beachId
+  const reviews = await Review.findAll({
+    where: { beachId },
+    include: [
+      {model: User}
+    ]
+  })
+  return res.json(reviews)
+}))
+
+router.post('/:beachId/reviews', asyncHandler(async(req, res) => {
+  const newReview = await Review.create(req.body);
+  const review = await Review.findByPk(newReview.id, {
+    include: [
+      {model: User}
+    ]
+  })
+  return res.json(review)
+}))
+
+
+
 module.exports = router;

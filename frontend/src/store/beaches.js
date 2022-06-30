@@ -4,7 +4,7 @@ import { csrfFetch } from "./csrf"
 
   //GET SINGLE BEACH
 const GET_BEACH = "beaches/getBeach";
-    //GET SINGLE BEACH
+    //GET ALL BEACH
 const GET_BEACHS = 'beaches/getBeachs'
   //CREATE
 const CREATE_BEACH = 'beaches/createBeach'
@@ -62,7 +62,6 @@ export const thunkGetBeach = (beachId) => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log("this is the data on render", data)
     dispatch(actionGetBeach(data));
     return response
   }

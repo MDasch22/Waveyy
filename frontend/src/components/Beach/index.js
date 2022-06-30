@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useHistory, NavLink, Link } from 'react-router-dom'
 import { thunkGetBeach, thunkDeleteBeach } from '../../store/beaches';
 import EditFormModal from '../EditBeachModal';
+import Reviews from '../Reviews';
 
 
 export default function BeachId() {
@@ -35,6 +36,8 @@ export default function BeachId() {
         <h1>{beach.title}</h1>
         <h2>{beach.city} {beach?.country}</h2>
         <p>{beach.description}</p>
+
+        <Reviews />
       </>
       )
   }
@@ -58,7 +61,7 @@ export default function BeachId() {
           </>
         )
       }
+      <Reviews />
     </>
-
   )
 }
