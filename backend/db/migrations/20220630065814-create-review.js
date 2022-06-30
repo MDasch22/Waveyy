@@ -10,19 +10,18 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {model: 'Users'}
+        type: Sequelize.INTEGER
       },
       beachId: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {model: "Beaches"}
+        type: Sequelize.INTEGER
       },
       rating: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
       comment: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       createdAt: {
