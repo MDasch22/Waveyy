@@ -1,1 +1,13 @@
 /* TODO Add site wide styles */
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+html {
+  background-image: url("https://i.postimg.cc/ZYNksDLb/waveyybackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-attachment: fixed;
+  color: white;
+}

@@ -25,6 +25,11 @@ export default function Reviews() {
   return (
     <>
       <h1>Reviews</h1>
+      {!reviews.length &&
+        <>
+          <h2> Doest seem to be any reviews yet... why don't you start us off!</h2>
+        </>
+      }
       {sessionUser &&
         <CreateReviewModal />
       }
@@ -53,7 +58,8 @@ export default function Reviews() {
                       <td>
                         <button
                           onClick={() => dispatch(thunkDeleteReview(review.id))}
-                        >Delete
+                        >
+                          <i class="fa-solid fa-trash"></i>
                         </button>
                       </td>
                     </>

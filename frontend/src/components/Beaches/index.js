@@ -35,9 +35,9 @@ export default function Beaches() {
         {beachArr.map(beach => {
           return (
             <div key={beach.id} className='beachContainer'>
-              <Link to={`/beaches/${beach.id}`}>
+              <Link to={`/beaches/${beach.id}`} id="beachLink">
                 <img src={beach.coverImg} alt="coverImg" id="beachImg"></img>
-                <h3 id="beachContent">{beach.title}</h3>
+                <h3 id="beachContentTitle">{beach.title}</h3>
               </Link>
               <p>{beach.city} {beach.country}</p>
             </div>
