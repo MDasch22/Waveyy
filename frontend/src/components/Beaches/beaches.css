@@ -2,27 +2,42 @@
   text-align: center;
 }
 
+.beachCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .beachContainer {
-  display: inline;
   float: left;
   border: 2px solid black;
   padding: 5px;
   margin: 10px;
   width: 350px;
   height: 350px;
-  background-image: url("https://i.pinimg.com/originals/46/51/9d/46519d4f3b3ba83399cda20540be5bc7.jpg");
+  background-image: url("https://www.indii.org/images/posts/gamla-stan-waters/1.jpg");
+  background-position: center;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
 }
 
+.beachContainer:hover{
+  box-shadow: 0 0 15px 10px rgba(151, 150, 150, 0.897);
+  transition: box-shadow .3s;
+  border: 2px solid white;
+}
+
 #beachCoverImg{
- padding-top: 50px;
- display: flex;
- flex-direction: column;
- position: relative;
- margin-bottom: 40px;
- width: 100%;
+ text-align: center;
+}
+
+#beachCovImg{
+  display: inline;
+  align-items: center;
+  margin-top: 80px;
+  width: 1900px;
+  height: 800px;
 }
 
 #beachImg {
@@ -39,7 +54,7 @@
   font-size: 50px;
   font-weight: bold;
   border-radius: 50%;
-  background-color: #5ab1eb;
+  background-color: #97b4d1;
   color: white;
   text-align: center;
   cursor: pointer;

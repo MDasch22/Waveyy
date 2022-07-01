@@ -1,6 +1,8 @@
 .navBar {
   background-image: url("https://images.photowall.com/products/65915/hanging-palm-leaves-black-white.jpg?h=699&q=85") ;
   background-color: grey;
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 #logo{
@@ -11,15 +13,16 @@
   font-weight: bold;
 }
 #logoImg {
-  height: 40px;
-  width: 40px;
-  background-size: cover;
+  height: 50px;
+  width: 150px;
+  /* background-size: cover; */
 }
 
 
 #logoTitle{
   font-size: 30px;
   cursor: pointer;
+  font-family: cursive;
 }
 
 

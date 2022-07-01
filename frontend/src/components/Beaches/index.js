@@ -24,7 +24,9 @@ export default function Beaches() {
 
   return (
     <>
-      <img id='beachCoverImg'src="https://cdn.wallpapersafari.com/10/9/VHfU1r.gif"></img>
+      <div id='beachCoverImg'>
+        <img id='beachCovImg'src="https://wallpaperaccess.com/full/2969980.jpg"></img>
+      </div>
       <h1 id="title">🌴 Find your Beach 🌴</h1>
       {sessionUser &&
       <>

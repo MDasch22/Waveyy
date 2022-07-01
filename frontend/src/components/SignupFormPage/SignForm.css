@@ -1,0 +1,34 @@
+.signupForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid;
+  width: 400px;
+}
+
+.signFrom {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#signupTitle {
+  margin-bottom: -5px;
+}
+
+#signupBttn {
+  padding: 14px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  background-color: #838485;
+  border-radius: 20px;
+  width: 150px;
+  transition: .3s;
+}
+#signupBttn:hover {
+  transform: scale(1.2);
+  color: white
+}

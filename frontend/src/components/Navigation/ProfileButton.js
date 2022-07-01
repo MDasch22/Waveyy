@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
             <li>{user.email}</li>
             <ul>
               <button onClick={logout}>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <i className="fa-solid fa-arrow-right-from-bracket"></i>
               </button>
             </ul>
           </ul>

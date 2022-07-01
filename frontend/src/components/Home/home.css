@@ -10,7 +10,7 @@
 .homeBeachCard {
   display: inline;
   float: left;
-  border: 2px solid #ccc;
+  border: 2px solid grey;
   padding: 5px;
   margin: 10px;
   width: 500px;
@@ -24,6 +24,7 @@
 .homeBeachCard:hover{
   box-shadow: 0 0 15px 10px rgba(151, 150, 150, 0.897);
   transition: box-shadow .3s;
+  border: 2px solid white;
 }
 
 #beachDetails {

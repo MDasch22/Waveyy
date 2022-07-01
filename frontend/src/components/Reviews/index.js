@@ -39,37 +39,41 @@ export default function Reviews() {
         <LoginFormModal />
       </text>
       }
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Rating</th>
-              <th>Review</th>
-            </tr>
-          {reviews.map(review => {
-            return (
-              <tr key={review.id}>
-                <td>{review.User.username}</td>
-                <td>{review.rating}⭐</td>
-                <td>{review.comment}</td>
-                { sessionUser?.id === review.userId &&
-                  (
-                    <>
-                      <td>
-                        <button
-                          onClick={() => dispatch(thunkDeleteReview(review.id))}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </td>
-                    </>
-                  )
-                }
+      {reviews.length > 0 &&
+        <>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Review</th>
               </tr>
-              )
-            })}
-          </thead>
-        </table>
+            {reviews.map(review => {
+              return (
+                <tr key={review.id}>
+                  <td>{review.User.username}</td>
+                  <td>{review.rating}⭐</td>
+                  <td>{review.comment}</td>
+                  { sessionUser?.id === review.userId &&
+                    (
+                      <>
+                        <td>
+                          <button
+                            onClick={() => dispatch(thunkDeleteReview(review.id))}
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </td>
+                      </>
+                    )
+                  }
+                </tr>
+                )
+              })}
+            </thead>
+          </table>
+        </>
+      }
     </>
   )
 }
