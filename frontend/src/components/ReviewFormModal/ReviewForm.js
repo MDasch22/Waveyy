@@ -11,7 +11,7 @@ export default function ReviewForm(props) {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [rating, setRating] = useState('')
+  const [rating, setRating] = useState(1)
   const [comment, setComment] = useState("")
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -21,7 +21,7 @@ export default function ReviewForm(props) {
     if(!comment) errors.push("Pleae provide your thoughts on this beach!")
     if(comment.length < 19) errors.push("Review must be at least 20 characters!")
     setValidationErrors(errors);
-  })
+  },[comment])
 
 
 

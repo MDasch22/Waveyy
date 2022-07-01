@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { thunkUpdateBeach } from "../../store/beaches";
 
 export default function EditForm(props) {
   const { beachId } = useParams();
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const beach = useSelector((state) => state.beaches[beachId]);
   const sessionUser = useSelector((state) => state.session.user);
@@ -23,19 +22,35 @@ export default function EditForm(props) {
 
   useEffect(() => {
     const errors = [];
+    let testRegex = /^https?:\/\/(?:[a-z0-9-]+\.)+[a-z]{2,6}(?:\/[^/#?]+)+\.(?:jpe?g|gif|png|bmp)$/;
+    let imageUrlReg = coverImg;
+    if (!testRegex.test(imageUrlReg)) {
+      errors.push('Must provide a proper imageUrl')}
     if (!coverImg) errors.push("Please provide a valid beach image ");
-    if (!title || title.length < 2 || title.length > 50)
-      errors.push("Please Provide a valid beach title");
-    if (!description || description.length < 5)
+    if (!title)
+      errors.push("Please provide a valid beach title");
+      if (title.length < 3)
+      errors.push("Must be at least 3 characters");
+    if (title.length > 50)
+      errors.push("Title can have no more than 50 characters");
+    if (!description)
       errors.push("Please provide a description of the beach");
-    if (!address || address.length < 3 || address.length > 50)
+    if (description.length < 5)
+      errors.push("Description must be longer than 5 characters");
+    if (!address || address.length < 3)
       errors.push("Please provide a valid address");
+    if (address.length > 50)
+      errors.push("Address can be no longer than 50 characters");
     if (!city || city.length < 1 || city.length > 20)
-      errors.push("Please provide the city where the beach is located");
+      errors.push("Please provide a valid city");
+    if (city.length > 20)
+      errors.push("City cant exceed 20 characters");
     if (!country || country.length < 3 || country.length > 20)
-      errors.push("Please provide the country where the beach is located");
-    if (!zipCode || zipCode.length < 4 || zipCode.length > 5)
-      errors.push("Please provide the ZIP Code");
+      errors.push("Please provide a valid country");
+    let zipTestRegex = /\d{5}/
+    let zipReg = zipCode;
+    if(!zipTestRegex.test(zipReg)){
+      errors.push("Please provide the ZIP Code")}
     setValidationErrors(errors);
   }, [coverImg, title, description, address, city, country, zipCode]);
 
@@ -85,7 +100,10 @@ export default function EditForm(props) {
               Wow there! Fix these up before you go 😉:
               <ul>
                 {validationErrors.map((error) => (
-                  <li key={error}>{error}</li>
+                  <ul key={error}>
+                  <i class="fas fa-spinner fa-pulse"></i>
+                {error}
+                </ul>
                 ))}
               </ul>
             </div>
@@ -99,7 +117,6 @@ export default function EditForm(props) {
           <input
             type="text"
             placeholder="Title"
-            required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
