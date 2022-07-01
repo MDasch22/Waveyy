@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, useHistory, NavLink, Link } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { thunkGetAllReviews, thunkDeleteReview } from '../../store/reviews';
+import LoginFormModal from '../LoginFormModal';
 import CreateReviewModal from '../ReviewFormModal';
 
 export default function Reviews() {
-  const history = useHistory();
   const dispatch = useDispatch();
   const { beachId } = useParams();
 
@@ -25,7 +25,15 @@ export default function Reviews() {
   return (
     <>
       <h1>Reviews</h1>
-      <CreateReviewModal />
+      {sessionUser &&
+        <CreateReviewModal />
+      }
+      {!sessionUser &&
+      <text>
+        Want to leave a review?
+        <LoginFormModal />
+      </text>
+      }
         <table>
           <thead>
             <tr>

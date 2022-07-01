@@ -11,8 +11,19 @@ const router = express.Router();
 const validateSignup = [
   check('email')
     .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Email Address')
+    .isLength({ max: 255 })
+    .withMessage('Email Address must not be more than 255 characters long')
     .isEmail()
-    .withMessage('Please provide a valid email.'),
+    .withMessage('Email Address is not a valid email')
+    .custom((value) => {
+      return User.findOne({ where: { email: value } })
+        .then((user) => {
+          if (user) {
+            return Promise.reject('The provided Email Address is already in use by another account');
+          }
+        });
+    }),
   check('username')
     .exists({ checkFalsy: true })
     .isLength({ min: 4 })
