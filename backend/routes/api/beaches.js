@@ -7,31 +7,6 @@ const { Beach, User, Review} = require('../../db/models')
 
 const router = express.Router()
 
-// const validateCreate = [
-//   check('coverImg')
-//     .exists({checkFalsy: true})
-//     .withMessage("Please provide an image of the beach!"),
-//   check('title')
-//     .exists({checkFalsy: true })
-//     .withMessage("Please provide the name of the beach!"),
-//   check('description')
-//     .exists({checkFalsy: true })
-//     .withMessage("Please provide a description of the beach!"),
-//   check('address')
-//     .exists({checkFalsy: true})
-//     .withMessage("Please provide an address of the beach!"),
-//   check('city')
-//     .exists({checkFalsy: true })
-//     .withMessage("Please provide the city where the beach is located!"),
-//   check('country')
-//     .exists({checkFalsy: true })
-//     .withMessage("Please provide the country where the beach is located!"),
-//   check('zipCode')
-//     .exists({checkFalsy: true })
-//     .withMessage("Please provide the ZIP Code!"),
-//   handleValidationErrors
-// ]
-
 
 // ------------------GET ALL BEACHES------------------//
 router.get('/', async (req, res) => {
@@ -103,7 +78,7 @@ router.delete('/:beachId', asyncHandler( async(req, res) => {
   return res.json({success: true});
 }))
 
-
+// ------------------GET REVIEWS BEACH------------------//
 router.get('/:beachId/reviews', asyncHandler(async(req, res) => {
   const beachId = req.params.beachId
   const reviews = await Review.findAll({
@@ -115,6 +90,7 @@ router.get('/:beachId/reviews', asyncHandler(async(req, res) => {
   return res.json(reviews)
 }))
 
+// ------------------UPDATE BEACH------------------//
 router.post('/:beachId/reviews', asyncHandler(async(req, res) => {
   const newReview = await Review.create(req.body);
   const review = await Review.findByPk(newReview.id, {

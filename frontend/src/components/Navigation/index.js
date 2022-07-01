@@ -29,10 +29,7 @@ function Navigation({ isLoaded }){
   return (
     <ul className='navBar'>
         <NavLink exact to="/" id="logo">
-          <>
-            <img src='https://i.postimg.cc/cLHvhrJp/wavept2.png' id="logoImg"></img>
-              <label id='logoTitle'>aveyy</label>
-          </>
+            <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' id="logoImg"></img>
         </NavLink>
         {isLoaded && sessionLinks}
         <NavLink to="/beaches" id='beachesLink'>Beaches</NavLink>
