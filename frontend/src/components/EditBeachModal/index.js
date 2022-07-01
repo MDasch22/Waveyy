@@ -8,7 +8,9 @@ function EditFormModal() {
 
   return (
     <>
-      <button className="createEditBttn" onClick={() => setShowModal(true)}>Edit</button>
+      <button className="createEditBttn" onClick={() => setShowModal(true)}>
+        <i class="fas fa-edit"></i>
+      </button>
       {showModal && (
         <EditModal onClose={() => setShowModal(false)}>
           <EditForm trigger={showModal} setTrigger={setShowModal}/>

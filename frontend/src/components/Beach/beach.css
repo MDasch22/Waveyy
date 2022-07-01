@@ -1,0 +1,11 @@
+.beachDetails{
+  text-align: center;
+}
+
+#beachDetailImg{
+  display: inline;
+  align-items: center;
+  margin-top: 80px;
+  width: 1500px;
+  height: 800px;
+}

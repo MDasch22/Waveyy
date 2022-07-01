@@ -13,6 +13,7 @@
   background-image: url("https://i.pinimg.com/originals/46/51/9d/46519d4f3b3ba83399cda20540be5bc7.jpg");
   border-radius: 10px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 #beachCoverImg{
@@ -41,4 +42,13 @@
   color: white;
   text-align: center;
   cursor: pointer;
+}
+
+#beachContentTitle {
+  text-decoration: none;
+  color: white;
+}
+
+#beachLink {
+  text-decoration: none;
 }

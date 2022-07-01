@@ -4,6 +4,7 @@ import { useParams, useHistory, NavLink, Link } from 'react-router-dom'
 import { thunkGetBeach, thunkDeleteBeach } from '../../store/beaches';
 import EditFormModal from '../EditBeachModal';
 import Reviews from '../Reviews';
+import './beach.css'
 
 
 export default function BeachId() {
@@ -32,11 +33,13 @@ export default function BeachId() {
   if(!sessionUser) {
     return (
       <>
-        <img src={beach.coverImg}></img>
-        <h1>{beach.title}</h1>
-        <h2>{beach.city} {beach?.country}</h2>
-        <p>{beach.description}</p>
+        <div className='beachDetails'>
+          <img src={beach.coverImg} id='beachDetailImg'></img>
+          <h1>{beach.title}</h1>
+          <h2>{beach.city} {beach?.country}</h2>
+          <p>{beach.description}</p>
 
+        </div>
         <Reviews />
       </>
       )
@@ -44,23 +47,25 @@ export default function BeachId() {
 
   return (
     <>
-      <>
-        <img src={beach.coverImg}></img>
-        <h1>{beach.title}</h1>
-        <h2>{beach.city} {beach?.country}</h2>
-        <p>{beach.description}</p>
-      </>
-      {sessionUser.id === beach.ownerId &&
-        (
-          <>
-            <EditFormModal />
-            <button
-            onClick={onDelete}>
-            Delete
-            </button>
-          </>
-        )
-      }
+      <div className='beachDetails'>
+        <>
+          <img src={beach.coverImg} id='beachDetailImg'></img>
+          <h1>{beach.title}</h1>
+          <h2>{beach.city} {beach?.country}</h2>
+          <p>{beach.description}</p>
+        </>
+        {sessionUser.id === beach.ownerId &&
+          (
+            <>
+              <EditFormModal />
+              <button
+              onClick={onDelete}>
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </>
+          )
+        }
+      </div>
       <Reviews />
     </>
   )

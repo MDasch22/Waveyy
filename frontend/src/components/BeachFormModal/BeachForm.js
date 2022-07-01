@@ -56,6 +56,7 @@ export default function BeachForm(props) {
     // console.log(validationErrors);
     if (validationErrors.length) return alert("Cannot Submit");
 
+
     const newBeach = {
       coverImg,
       ownerId: sessionUser.id,
@@ -81,6 +82,7 @@ export default function BeachForm(props) {
     setHasSubmitted(false);
     setValidationErrors([]);
     props.setTrigger(false);
+    alert("Your beach was created!")
   };
 
   return (
@@ -94,7 +96,7 @@ export default function BeachForm(props) {
               <ul>
                 {validationErrors.map((error) => (
                   <ul key={error}>
-                    <i class="fas fa-spinner fa-spin"></i>
+                    <i className="fas fa-spinner fa-spin"></i>
                   {error}
                   </ul>
                 ))}
@@ -103,7 +105,7 @@ export default function BeachForm(props) {
           )}
           <input
             type="text"
-            placeholder="Image URL (e.g .jpg, .png)"
+            placeholder="Image URL"
             value={coverImg}
             onChange={(e) => setCoverImg(e.target.value)}
           />

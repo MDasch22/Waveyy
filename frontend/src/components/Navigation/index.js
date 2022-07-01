@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 
+
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
@@ -17,19 +18,24 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
-        <NavLink to="/signup">
+        <NavLink to="/signup" id='signUp'>
           <button>Sign Up</button>
         </NavLink>
+        <LoginFormModal />
       </>
     );
   }
 
   return (
-    <ul>
-        <NavLink exact to="/">Home</NavLink>
-        <NavLink to="/beaches">Beaches</NavLink>
+    <ul className='navBar'>
+        <NavLink exact to="/" id="logo">
+          <>
+            <img src='https://i.postimg.cc/cLHvhrJp/wavept2.png' id="logoImg"></img>
+              <label id='logoTitle'>aveyy</label>
+          </>
+        </NavLink>
         {isLoaded && sessionLinks}
+        <NavLink to="/beaches" id='beachesLink'>Beaches</NavLink>
     </ul>
   );
 }

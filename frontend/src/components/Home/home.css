@@ -1,0 +1,44 @@
+.homeTitle{
+  text-align: center;
+}
+
+.homeContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.homeBeachCard {
+  display: inline;
+  float: left;
+  border: 2px solid #ccc;
+  padding: 5px;
+  margin: 10px;
+  width: 500px;
+  height: 200px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+
+.homeBeachCard:hover{
+  box-shadow: 0 0 15px 10px rgba(151, 150, 150, 0.897);
+  transition: box-shadow .3s;
+}
+
+#beachDetails {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+#beachHomeImg{
+  width: 300px;
+  height: 200px;
+  padding-bottom: 15px;
+  border-radius: 5%;
+}
+
+#cardLink {
+  text-decoration: none;
+  color: white;
+}

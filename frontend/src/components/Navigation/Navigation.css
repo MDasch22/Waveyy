@@ -1,0 +1,58 @@
+.navBar {
+  background-image: url("https://images.photowall.com/products/65915/hanging-palm-leaves-black-white.jpg?h=699&q=85") ;
+  background-color: grey;
+}
+
+#logo{
+  text-decoration: none;
+  color: rgb(124, 194, 255);
+  /* float: left; */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+#logoImg {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+}
+
+
+#logoTitle{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+#beachesLink{
+  margin-top: 20px;
+  text-decoration: none;
+  float: right;
+  text-align: center;
+  margin-right: 15px;
+  margin-top: 20px;
+  color: white;
+}
+
+
+#signUp {
+  margin-top: 20px;
+  float: right;
+  margin-left: 5px;
+}
+
+#logIn {
+  margin-top: 20px;
+  float: right;
+}
+
+.profileBttn {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.dropdown-content{
+  position:absolute;
+  right: 10px;
+  left: auto;
+}
