@@ -34,10 +34,12 @@ export default function Reviews() {
         <CreateReviewModal />
       }
       {!sessionUser &&
-      <text>
-        Want to leave a review?
+      <div className='notLoggedIn'>
+        <label>
+          Want to leave a review?
+        </label>
         <LoginFormModal />
-      </text>
+      </div>
       }
       {reviews.length > 0 &&
         <>

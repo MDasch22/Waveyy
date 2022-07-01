@@ -36,7 +36,7 @@ function LoginForm(props) {
   return (
     <form onSubmit={handleSubmit} className='loginForm'>
       <div id='loginGif'>
-        <img id='loginGif' src="https://i.pinimg.com/originals/02/86/c9/0286c975356200b960862134bfc666e3.gif" />
+        <img id='loginGif' src="https://i.pinimg.com/originals/02/86/c9/0286c975356200b960862134bfc666e3.gif" alt="loginGif"/>
         <h2 className="loginTitle">Log in to Waveyy</h2>
       </div>
       <label id='signUpRed'>New to Waveyy?

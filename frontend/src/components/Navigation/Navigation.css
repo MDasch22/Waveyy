@@ -18,7 +18,6 @@
   /* background-size: cover; */
 }
 
-
 #logoTitle{
   font-size: 30px;
   cursor: pointer;
@@ -28,11 +27,18 @@
 
 #beachesLink{
   margin-top: 20px;
-  text-decoration: none;
   float: right;
-  text-align: center;
-  margin-right: 15px;
-  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 3px 5px;
+  border-radius: 20px;
+  transition: .3s;
+  background-color: #929496;
+}
+
+#beachesLink:hover {
+  transform: scale(1.1);
+  border-radius: 20px;
   color: white;
 }
 
@@ -41,21 +47,86 @@
   margin-top: 20px;
   float: right;
   margin-left: 5px;
+  margin-right: 5px;
+  padding: 3px 5px;
+  border-radius: 20px;
+  transition: .3s;
+  background-color: #929496;
 }
 
 #logIn {
   margin-top: 20px;
   float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 3px 5px;
+  border-radius: 20px;
+  transition: .3s;
+  background-color: #929496;
+}
+
+#logIn:hover{
+  transform: scale(1.1);
+  color:aliceblue
+}
+
+#signUp:hover{
+  transform: scale(1.1);
+  color:aliceblue
 }
 
 .profileBttn {
+  padding: 3px 5px;
+  border-radius: 15px;
   float: right;
   margin-top: 20px;
   margin-right: 20px;
+  background-color: #929496
+}
+
+.profileBttn:hover{
+  transform: scale(1.1);
+  color: aliceblue;
+}
+
+.logoutBttn {
+  padding: 5px 8px;
+  border-radius: 15px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 20px;
+  background-color: #929496
+}
+
+.logoutBttn:hover {
+  transform: scale(1.1);
+  color: aliceblue;
+  background-color: red;
 }
 
 .dropdown-content{
   position:absolute;
   right: 10px;
   left: auto;
+}
+
+#writeReviewBttn {
+  padding: 3px 5px;
+  border-radius: 20px;
+  transition: .3s;
+  background-color: #929496;
+}
+
+#writeReviewBttn:hover{
+  transform: scale(1.1);
+  color:aliceblue
+}
+
+.reviewFormSection {
+  margin-left: 20px;
+}
+
+.notLoggedIn {
+  display: flex;
+
 }
