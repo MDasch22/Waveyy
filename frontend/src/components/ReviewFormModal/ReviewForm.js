@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { thunkCreateReview } from "../../store/reviews";
 
 
@@ -48,7 +48,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-      <section className="reviewForm">
+      <div className="reviewFormSection">
         <h1>Create a review </h1>
         <form
           className="reviewForm"
@@ -87,7 +87,7 @@ const handleSubmit = (e) => {
           />
           <button type="submit">Submit your review</button>
         </form>
-      </section>
+      </div>
     </>
   )
 }

@@ -58,7 +58,6 @@ export default function EditForm(props) {
     e.preventDefault();
 
     setHasSubmitted(true);
-    console.log(validationErrors);
     if (validationErrors.length) return alert("Cannot Submit this Edit");
 
     const newBeach = {

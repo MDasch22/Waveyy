@@ -18,8 +18,8 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/signup" id='signUp'>
-          <button>Sign Up</button>
+        <NavLink to="/signup">
+          <button id='signUp'>Sign Up</button>
         </NavLink>
         <LoginFormModal />
       </>
@@ -29,10 +29,12 @@ function Navigation({ isLoaded }){
   return (
     <ul className='navBar'>
         <NavLink exact to="/" id="logo">
-            <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' id="logoImg"></img>
+            <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' alt="logoImg" id="logoImg"></img>
         </NavLink>
         {isLoaded && sessionLinks}
-        <NavLink to="/beaches" id='beachesLink'>Beaches</NavLink>
+        <NavLink to="/beaches">
+          <button id="beachesLink">Beaches</button>
+        </NavLink>
     </ul>
   );
 }
