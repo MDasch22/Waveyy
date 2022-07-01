@@ -94,7 +94,7 @@ export default function BeachForm(props) {
               <ul>
                 {validationErrors.map((error) => (
                   <ul key={error}>
-                    <i class="fas fa-spinner fa-spin"></i>
+                    <i className="fas fa-spinner fa-spin"></i>
                   {error}
                   </ul>
                 ))}
