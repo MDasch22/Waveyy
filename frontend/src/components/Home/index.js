@@ -21,7 +21,7 @@ export default function Home() {
       <div className='homeCard'>
         {beachArr.map(beach => {
           return (
-              <div className="homeBeachCard">
+              <div className="homeBeachCard" key={beach.id}>
                 <Link to={`/beaches/${beach.id}`} id='cardLink'>
                   <div key={beach.id} className='homeContainer'>
                     <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>

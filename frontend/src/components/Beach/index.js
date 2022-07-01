@@ -60,7 +60,7 @@ export default function BeachId() {
               <EditFormModal />
               <button
               onClick={onDelete}>
-                <i class="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-trash"></i>
               </button>
             </>
           )

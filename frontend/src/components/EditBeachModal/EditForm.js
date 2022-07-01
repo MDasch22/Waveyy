@@ -101,9 +101,9 @@ export default function EditForm(props) {
               <ul>
                 {validationErrors.map((error) => (
                   <ul key={error}>
-                  <i className="fas fa-spinner fa-pulse"></i>
-                {error}
-                </ul>
+                    <i className="fas fa-spinner fa-pulse"></i>
+                  {error}
+                  </ul>
                 ))}
               </ul>
             </div>
