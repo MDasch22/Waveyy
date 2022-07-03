@@ -6,15 +6,16 @@
   margin-top: 100px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .homeContainer{
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 
 .homeBeachCard {
-  display: inline;
+  display: flex;
   float: left;
   border: 2px solid grey;
   padding: 5px;
