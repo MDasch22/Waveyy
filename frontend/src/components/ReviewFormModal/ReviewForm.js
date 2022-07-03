@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { thunkCreateReview } from "../../store/reviews";
-
+import './reviewform.css'
 
 
 export default function ReviewForm(props) {
@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
   return (
     <>
       <div className="reviewFormSection">
-        <h1>Create a review </h1>
+        <h1 className="reviewTitle">Create a review </h1>
         <form
           className="reviewForm"
           onSubmit={handleSubmit}
@@ -81,11 +81,12 @@ const handleSubmit = (e) => {
           </select>
           <label>Leave your thoughts: </label>
           <textarea
-            placeholder="start typing here..."
+            placeholder="Start typing here..."
+            id='reviewText'
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button type="submit">Submit your review</button>
+          <button id="reviewBttn" type="submit">Submit your review</button>
         </form>
       </div>
     </>

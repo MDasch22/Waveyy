@@ -1,0 +1,40 @@
+.reviewFormSection{
+  height: 300px
+}
+
+.reviewTitle{
+  margin-right: 20px;
+}
+
+.reviewForm {
+  display:flex;
+  flex-direction: column;
+  margin-right: 20px;
+
+}
+
+#reviewText{
+  height: 100px;
+  resize: none;
+}
+
+#reviewBttn {
+  padding: 9px 15px;
+  border: none;
+  margin-left: 32px;
+  cursor: pointer;
+  width: 70%;
+  border-radius: 20px;
+  background-color: #838485;
+  transition: .3s;
+  margin-top: 30px;
+}
+
+#reviewBttn:hover{
+  transform: scale(1.1);
+  color: white;
+}
+
+option {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkCreateBeach } from "../../store/beaches";
+import './beachform.css'
 
 export default function BeachForm(props) {
   const dispatch = useDispatch();
@@ -88,7 +89,7 @@ export default function BeachForm(props) {
   return (
     <>
       <section className="beachForm">
-        <h1>Create your very own beach!</h1>
+        <h1 id='beachFormTitle'>Create your very own beach!</h1>
         <form className="createNewBeach" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
             <div>
@@ -116,8 +117,9 @@ export default function BeachForm(props) {
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
-            placeholder="Description of beach 🌊"
+            placeholder="Description of the beach 🌊"
             value={description}
+            id='beachDescription'
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
@@ -144,7 +146,7 @@ export default function BeachForm(props) {
             value={zipCode}
             onChange={(e) => setZipCode(e.target.value)}
           />
-          <button type="submit">Create New Beach</button>
+          <button id="formBttn" type="submit">Create New Beach</button>
         </form>
       </section>
     </>

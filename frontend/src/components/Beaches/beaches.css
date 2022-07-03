@@ -58,6 +58,12 @@
   color: white;
   text-align: center;
   cursor: pointer;
+  margin-left: 20px;
+}
+
+.createBeachBttn:hover{
+  transform: scale(1.1);
+  background-color: #73b0ec ;
 }
 
 #beachContentTitle {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, useHistory, NavLink, Link } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { thunkGetBeach, thunkDeleteBeach } from '../../store/beaches';
 import EditFormModal from '../EditBeachModal';
 import Reviews from '../Reviews';
@@ -19,7 +19,7 @@ export default function BeachId() {
 
   useEffect(() => {
     dispatch(thunkGetBeach(beachId))
-  },[dispatch])
+  },[dispatch, beachId])
 
   const onDelete = async() => {
     await dispatch(thunkDeleteBeach(beachId))
@@ -34,13 +34,15 @@ export default function BeachId() {
     return (
       <>
         <div className='beachDetails'>
-          <img src={beach.coverImg} id='beachDetailImg'></img>
+          <img src={beach.coverImg} id='beachDetailImg' alt='beachImg'></img>
           <h1>{beach.title}</h1>
           <h2>{beach.city} {beach?.country}</h2>
           <p>{beach.description}</p>
 
         </div>
+        <div className='reviews'>
         <Reviews />
+      </div>
       </>
       )
   }
@@ -49,7 +51,7 @@ export default function BeachId() {
     <>
       <div className='beachDetails'>
         <>
-          <img src={beach.coverImg} id='beachDetailImg'></img>
+          <img src={beach.coverImg} id='beachDetailImg' alt='beachImg'></img>
           <h1>{beach.title}</h1>
           <h2>{beach.city} {beach?.country}</h2>
           <p>{beach.description}</p>
@@ -66,7 +68,9 @@ export default function BeachId() {
           )
         }
       </div>
-      <Reviews />
+      <div className='reviews'>
+        <Reviews />
+      </div>
     </>
   )
 }
