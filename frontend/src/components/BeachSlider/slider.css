@@ -1,0 +1,59 @@
+.slider {
+  margin-top: 100px;
+  position: relative;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderImg{
+  width: 1500px;
+  height: 800px;
+  border: 10px;
+}
+
+.RightArrow {
+  position:absolute;
+  top: 50%;
+  right: 150px;
+  font-size: 3rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  transition: 1s ease;
+}
+
+.leftArrow {
+  position:absolute;
+  top: 50%;
+  left: 150px;
+  font-size: 3rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  transition: 1s ease;
+}
+
+.slide {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.slide-active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.1);
+}
+
+.RightArrow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.leftArrow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
