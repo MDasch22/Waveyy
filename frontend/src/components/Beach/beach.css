@@ -14,4 +14,10 @@
 
 .reviews{
   margin-left: 20px;
+  margin-bottom: 150px;
+}
+
+.beachDetails p {
+  margin-left: 150px;
+  margin-right: 150px;
 }

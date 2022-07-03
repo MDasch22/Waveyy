@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { thunkGetAllBeaches } from '../../store/beaches';
+import BeachSlider from '../BeachSlider';
+import { SliderData } from '../BeachSlider/sliderData'
 import './home.css'
 
 export default function Home() {
   const dispatch = useDispatch();
 
   const beachArr = useSelector(state => Object.values(state.beaches))
-  const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
     dispatch(thunkGetAllBeaches())
@@ -18,11 +19,14 @@ export default function Home() {
   return (
     <>
       <h1 className='homeTitle'>🌴 Find your Beach 🌴</h1>
+      <div className='slider-content'>
+        <BeachSlider slides={SliderData}/>
+      </div>
       <div className='homeCard'>
         {beachArr.map(beach => {
           return (
-              <div className="homeBeachCard" key={beach.id}>
-                <Link to={`/beaches/${beach.id}`} id='cardLink'>
+              <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
+                <div className="homeBeachCard" key={beach.id}>
                   <div key={beach.id} className='homeContainer'>
                     <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
                     <div id="beachDetails">
@@ -30,8 +34,8 @@ export default function Home() {
                       <p id="beachLocation">{beach.city} {beach.country}</p>
                     </div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             )
           })
         }

@@ -57,20 +57,22 @@ export default function Reviews() {
                   <td className='reviewData'>{review.User.username}</td>
                   <td className='star-rating'>{review.rating}⭐</td>
                   <td className='reviewData'>{review.comment}</td>
-                  { sessionUser?.id === review.userId &&
-                    (
-                      <>
+                  <td>
+                    { sessionUser?.id === review.userId &&
+                      (
+                        <>
 
-                          <button
-                            id="deleteReview"
-                            onClick={() => dispatch(thunkDeleteReview(review.id))}
-                            >
-                            <i className="fa-solid fa-trash"></i>
-                          </button>
+                            <button
+                              id="deleteReview"
+                              onClick={() => dispatch(thunkDeleteReview(review.id))}
+                              >
+                              <i className="fa-solid fa-trash"></i>
+                            </button>
 
-                      </>
-                    )
-                  }
+                        </>
+                      )
+                    }
+                  </td>
                   </tr>
                 )
               })}
