@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Beaches from "./components/Beaches";
 import BeachId from "./components/Beach";
 import Home from "./components/Home";
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ function App() {
           </Route>
         </Switch>
       )}
-
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,31 @@
+footer {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  margin-top: 800px;
+  margin-bottom: -40px;
+  padding-bottom: 27px;
+  background-image: url("https://i.postimg.cc/L6D2qQ8T/photo-1604515586704-3e8d954b47ec.jpg") ;
+  background-size: 120%;
+
+}
+
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#linkGit{
+  margin-top: 27px;
+  margin-left: 30px;
+  text-decoration: none;
+
+}
+
+#linkedIn{
+  margin-top: 27px;
+  margin-left: 20px;
+  text-decoration: none;
+
+}
