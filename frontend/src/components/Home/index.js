@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className='homeTitle'>Welcome to Waveyy</h1>
+      <h1 className='homeTitle'>🌴 Find your Beach 🌴</h1>
       <div className='homeCard'>
         {beachArr.map(beach => {
           return (

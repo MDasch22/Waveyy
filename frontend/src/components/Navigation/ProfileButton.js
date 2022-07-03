@@ -39,15 +39,15 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <div className="dropdown-content">
-          <ul className="profile-dropdown">
-            <li> Welcome, {user.username}</li>
-            <li>{user.email}</li>
+          <div className="profile-dropdown">
+            <div className="dropdown-info"> Welcome, {user.username}</div>
+            <div className="dropdown-info">{user.email}</div>
             <ul>
               <button onClick={logout} className="logoutBttn">
                 <i className="fa-solid fa-arrow-right-from-bracket"></i>
               </button>
             </ul>
-          </ul>
+          </div>
         </div>
       )}
     </>
