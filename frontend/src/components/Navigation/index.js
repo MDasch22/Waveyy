@@ -33,7 +33,9 @@ function Navigation({ isLoaded }){
         </NavLink>
         {isLoaded && sessionLinks}
         <NavLink to="/beaches">
-          <button id="beachesLink">Beaches</button>
+          <button id="beachesLink">
+            <i class="fa-solid fa-water"></i>
+          </button>
         </NavLink>
     </ul>
   );

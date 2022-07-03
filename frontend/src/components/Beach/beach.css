@@ -1,5 +1,6 @@
 .beachDetails{
   text-align: center;
+  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829
 }
 
 #beachDetailImg{
@@ -8,6 +9,7 @@
   margin-top: 80px;
   width: 1500px;
   height: 800px;
+
 }
 
 .reviews{

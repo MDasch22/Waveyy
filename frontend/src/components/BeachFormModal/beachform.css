@@ -32,3 +32,25 @@
   justify-content: center;
   margin-right: 5px;
 }
+
+.errorHandling {
+  background-color: #bd393962;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  border: 2px solid white;
+}
+
+.errorTitle {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.errors {
+  margin-left: -70px;
+  font-size: 15px;
+}
+
+#spinner {
+  margin-right: 4px;
+}

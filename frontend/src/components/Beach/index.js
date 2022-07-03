@@ -41,8 +41,8 @@ export default function BeachId() {
 
         </div>
         <div className='reviews'>
-        <Reviews />
-      </div>
+          <Reviews />
+        </div>
       </>
       )
   }

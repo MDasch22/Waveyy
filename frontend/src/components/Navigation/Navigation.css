@@ -1,21 +1,24 @@
 .navBar {
-  background-image: url("https://i.postimg.cc/B6VYHM3z/photo-1604515586704-3e8d954b47ec.jpg") ;
-  background-position: center;
+  background-image: url("https://i.postimg.cc/L6D2qQ8T/photo-1604515586704-3e8d954b47ec.jpg") ;
+  /* background-position: center; */
+
+  background-size: cover;
   margin-top: 0;
   padding-top: 10px;
+  border-bottom: 2px solid #929496;
+
 }
 
 #logo{
   text-decoration: none;
   color: rgb(124, 194, 255);
-  /* float: left; */
   margin-bottom: 5px;
   font-weight: bold;
 }
 #logoImg {
   height: 50px;
-  width: 150px;
-  /* background-size: cover; */
+  width: 200px;
+
 }
 
 #logoTitle{
@@ -94,7 +97,7 @@
   border-radius: 15px;
   float: right;
   margin-top: 5px;
-  margin-right: 20px;
+  margin-right: 50px;
   background-color: #929496
 }
 
@@ -106,8 +109,24 @@
 
 .dropdown-content{
   position:absolute;
-  right: 10px;
-  left: auto;
+  right: 1px;
+  width: auto;
+  background-image: url("https://i.postimg.cc/L6D2qQ8T/photo-1604515586704-3e8d954b47ec.jpg") ;
+  background-size: 650%;
+  border: 2px solid #929496;
+  border-top: none;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px #000000, 0 0 10px #000000
+
+}
+
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px;
+  width: auto;
 }
 
 #writeReviewBttn {

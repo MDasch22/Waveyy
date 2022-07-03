@@ -59,18 +59,22 @@
   text-align: center;
   cursor: pointer;
   margin-left: 20px;
+  transition: .3s;
 }
 
 .createBeachBttn:hover{
   transform: scale(1.1);
   background-color: #73b0ec ;
+  box-shadow: 0 0 10px 4px rgba(151, 150, 150, 0.897);
 }
 
 #beachContentTitle {
   text-decoration: none;
   color: white;
+  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829
 }
 
 #beachLink {
   text-decoration: none;
+  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829
 }

@@ -1,0 +1,19 @@
+/* th {
+  border-bottom: 2px solid #929496;
+} */
+
+.reviews-table{
+  border-collapse: collapse;
+  background-color: #727272;;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+#deleteReview {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+td{
+  padding: 9px;
+}

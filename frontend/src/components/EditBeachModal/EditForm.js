@@ -95,12 +95,14 @@ export default function EditForm(props) {
         <h1 id='beachFormTitle'>Editing {beach.title}</h1>
         <form className="createNewBeach" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
-            <div>
-              Wow there! Fix these up before you go 😉:
-              <ul>
+             <div className="errorHandling">
+              <div className="errorTitle">
+                Wow there! Fix these up before you go 😉:
+              </div>
+              <ul className='errors'>
                 {validationErrors.map((error) => (
-                  <ul key={error}>
-                    <i className="fas fa-spinner fa-pulse"></i>
+                  <ul key={error} id="error">
+                    <i className="fas fa-spinner fa-pulse" id="spinner"></i>
                   {error}
                   </ul>
                 ))}

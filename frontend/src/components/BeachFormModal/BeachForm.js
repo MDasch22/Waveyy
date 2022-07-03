@@ -92,12 +92,14 @@ export default function BeachForm(props) {
         <h1 id='beachFormTitle'>Create your very own beach!</h1>
         <form className="createNewBeach" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
-            <div>
-              The following errors were found 😡:
-              <ul>
+            <div className="errorHandling">
+              <div className="errorTitle">
+                The following errors were found 😡:
+              </div>
+              <ul className='errors'>
                 {validationErrors.map((error) => (
-                  <ul key={error}>
-                    <i className="fas fa-spinner fa-spin"></i>
+                  <ul key={error} id="error">
+                    <i className="fas fa-spinner fa-spin" id="spinner"></i>
                   {error}
                   </ul>
                 ))}

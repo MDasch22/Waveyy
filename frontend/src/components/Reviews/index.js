@@ -4,6 +4,7 @@ import { useParams} from 'react-router-dom'
 import { thunkGetAllReviews, thunkDeleteReview } from '../../store/reviews';
 import LoginFormModal from '../LoginFormModal';
 import CreateReviewModal from '../ReviewFormModal';
+import './reviews.css'
 
 export default function Reviews() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ export default function Reviews() {
       }
       {reviews.length > 0 &&
         <>
-          <table>
+          <table className='reviews-table'>
             <thead>
               <tr>
                 <th>Name</th>
@@ -53,23 +54,24 @@ export default function Reviews() {
             {reviews.map(review => {
               return (
                 <tr key={review.id}>
-                  <td>{review.User.username}</td>
-                  <td>{review.rating}⭐</td>
-                  <td>{review.comment}</td>
+                  <td className='reviewData'>{review.User.username}</td>
+                  <td className='star-rating'>{review.rating}⭐</td>
+                  <td className='reviewData'>{review.comment}</td>
                   { sessionUser?.id === review.userId &&
                     (
                       <>
-                        <td>
+
                           <button
+                            id="deleteReview"
                             onClick={() => dispatch(thunkDeleteReview(review.id))}
-                          >
+                            >
                             <i className="fa-solid fa-trash"></i>
                           </button>
-                        </td>
+
                       </>
                     )
                   }
-                </tr>
+                  </tr>
                 )
               })}
             </thead>

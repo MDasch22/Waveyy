@@ -27,7 +27,7 @@ export default function Beaches() {
       <div id='beachCoverImg'>
         <img id='beachCovImg'src="https://wallpaperaccess.com/full/2969980.jpg" alt="beachCoverImg"></img>
       </div>
-      <h1 id="title">🌴 Find your Beach 🌴</h1>
+      <h1 id="title">🌊 Beaches 🌊</h1>
       {sessionUser &&
       <>
         <CreateBeachModal />
