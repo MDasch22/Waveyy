@@ -4,6 +4,7 @@ import { useParams} from 'react-router-dom'
 import { thunkGetAllReviews, thunkDeleteReview } from '../../store/reviews';
 import LoginFormModal from '../LoginFormModal';
 import CreateReviewModal from '../ReviewFormModal';
+import { FaStar } from "react-icons/fa";
 import './reviews.css'
 
 export default function Reviews() {
@@ -55,7 +56,7 @@ export default function Reviews() {
               return (
                 <tr key={review.id}>
                   <td className='reviewData'>{review.User.username}</td>
-                  <td className='star-rating'>{review.rating}⭐</td>
+                  <td className='star-rating'>{review.rating} <FaStar color="#ffc107" /></td>
                   <td className='reviewData'>{review.comment}</td>
                   <td>
                     { sessionUser?.id === review.userId &&
