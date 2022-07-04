@@ -7,7 +7,7 @@ module.exports = {
       {
         profilePic: "https://www.ledgerinsights.com/wp-content/uploads/2021/12/adidas-nft-bored-ape.jpg",
         email: 'demo@user.io',
-        username: 'Demo',
+        username: 'Guest',
         hashedPassword: bcrypt.hashSync('password')
       },
       {
