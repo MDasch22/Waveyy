@@ -1,5 +1,13 @@
+.homePage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .homeTitle{
   text-align: center;
+  margin-bottom: -30px;
+
 }
 
 .homeCard{
