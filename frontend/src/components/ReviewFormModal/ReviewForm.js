@@ -55,11 +55,13 @@ const handleSubmit = (e) => {
           onSubmit={handleSubmit}
         >
           {hasSubmitted && validationErrors.length > 0 && (
-            <div>
-              Lets fix these up before you're done! 👍:
-              <ul>
+            <div className="errorHandling">
+              <div className="errorTitle">
+                Lets fix these up before you're done! 👍:
+              </div>
+              <ul className="errors">
                 {validationErrors.map((error) => (
-                  <ul key={error}>
+                  <ul key={error} id='error'>
                     <i className="fas fa-spinner fa-pulse"></i>
                     {error}
                   </ul>

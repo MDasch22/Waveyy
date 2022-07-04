@@ -33,6 +33,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: box-shadow .3s;
+  background-image: url("https://wallpaperaccess.com/full/1767482.jpg");
+  background-position: fixed;
 }
 
 .homeBeachCard:hover{
