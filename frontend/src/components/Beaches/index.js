@@ -25,7 +25,7 @@ export default function Beaches() {
   return (
     <>
       <div id='beachCoverImg'>
-        <img id='beachCovImg'src="https://wallpaperaccess.com/full/2969980.jpg" alt="beachCoverImg"></img>
+        <img id='beachCovImg'src="https://i.postimg.cc/Kc0Jwx12/shelter-bnd-Xq-Ha-Qnw-U-unsplash.jpg" alt="beachCoverImg"></img>
       </div>
       <h1 id="title">🌊 Beaches 🌊</h1>
       {sessionUser &&

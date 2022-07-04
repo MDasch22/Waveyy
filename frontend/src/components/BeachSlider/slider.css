@@ -1,14 +1,14 @@
+
 .slider {
   margin-top: 100px;
   position: relative;
-  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .sliderImg{
-  width: 1500px;
+  width: 1300px;
   height: 800px;
   border: 10px;
   border-radius: 20px;
