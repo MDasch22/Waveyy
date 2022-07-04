@@ -1,12 +1,42 @@
-![avatars-zwNzH3c8szbZEmgD-hAPmvw-t500x500](https://user-images.githubusercontent.com/95194326/176976694-9a890d39-4d24-4ad8-b963-7a1acd9f38aa.jpg)
-
-# [Welcome to Waveyy](https://waveyy.herokuapp.com/)
-
-Developer: [Michael Dasch](https://github.com/MDasch22) 
-
-Project Advisor: Brandon Laursen
-
-Explore the docs to see how to get [started](https://github.com/MDasch22/Waveyy/wiki) --> 
+<p align="center">
+  <img src="https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg" width="500" height="200">
+  <h3 align="center">Developer:
+    <a href="https://github.com/MDasch22"> Michael Dasch </a>
+  </h3>
+  <p align='center'>
+    ·
+    <a href="https://waveyy.herokuapp.com/">
+      Waveyy
+    </a>
+    ·
+  </p>
+  <p align="center">Project Advisor: Brandon Laursen</p>
+  <p align='center'>
+    Explore the docs to see how to get 
+    <a href="https://github.com/MDasch22/Waveyy/wiki">started</a>
+    --->
+  </p>
+</p>
+<details align="center 'open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#overview">Overview</a>
+      <ul>
+        <li>
+          <a href="#technologies-used">Technologies Used</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#features">Features</a></li>
+      <ul>
+        <li><a href="#beaches">Beaches</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    <li><a href="#challenges-faced">Challenges</a></li>
+    <li><a href="#code-snippets">Code Snippets</a></li>
+  </ol>
+</details>
 
 ## Overview
   With so many beaches around the world... how do you know where to start looking? Heres why Waveyy would be a great place for you to start
@@ -16,7 +46,7 @@ Explore the docs to see how to get [started](https://github.com/MDasch22/Waveyy/
   - Users will have acces to viewing beaches that might be of interest to them for future travel destinations. 
   - Users will have the ability to leave rating and a review for a specific beach, which then gets posted allowing all other users to view your thoughts.
   
-  ***Some Technologies Used***:
+  ### Technologies Used
   
   - With the given task, here a list of technologies that were used in order to complete this project...
   
@@ -46,7 +76,7 @@ Explore the docs to see how to get [started](https://github.com/MDasch22/Waveyy/
   2. One thing I found challenging towards the begining of the project was, asking a good question. The cohort is not just a group of 10 individuals, there are many peopel in class that are needing help with only a limited amount of help to actually go around. I found myself struggling to even ask a question because sometimes I didnt know where to start. Through stuggle comes glory because the more I struggled, the more I was able to understand what was going on which then led to better questions being formed. I found myself deep diving on the web to try to better my understanding on the topics being presented which overall allowed me to better my problem solving skills. 
 
 
-## Code Snipets 
+## Code Snippets 
 Below are some code snippets that showcase my progess through the program
 
 1. Image Slider 
