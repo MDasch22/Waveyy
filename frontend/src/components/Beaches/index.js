@@ -27,7 +27,7 @@ export default function Beaches() {
       <div id='beachCoverImg'>
         <img id='beachCovImg'src="https://i.postimg.cc/Kc0Jwx12/shelter-bnd-Xq-Ha-Qnw-U-unsplash.jpg" alt="beachCoverImg"></img>
       </div>
-      <h1 id="title">🌊 Beaches 🌊</h1>
+      <h1 id="title"> Beaches </h1>
       {sessionUser &&
       <>
         <CreateBeachModal />
@@ -36,13 +36,13 @@ export default function Beaches() {
       <div className='beachCard'>
         {beachArr.map(beach => {
           return (
-            <div key={beach.id} className='beachContainer'>
-              <Link to={`/beaches/${beach.id}`} id="beachLink">
+            <Link to={`/beaches/${beach.id}`} id="beachLink" key={beach.id}>
+              <div key={beach.id} className='beachContainer'>
                 <img src={beach.coverImg} alt="coverImg" id="beachImg"></img>
                 <h3 id="beachContentTitle">{beach.title}</h3>
-              </Link>
-              <p>{beach.city} {beach.country}</p>
-            </div>
+                <p>{beach.city} {beach.country}</p>
+              </div>
+            </Link>
             )
           })
         }

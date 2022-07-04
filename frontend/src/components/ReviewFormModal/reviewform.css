@@ -1,9 +1,10 @@
 .reviewFormSection{
-  height: 300px
+  height: auto;
 }
 
 .reviewTitle{
   margin-right: 20px;
+  text-align: center;
 }
 
 .reviewForm {
@@ -21,13 +22,14 @@
 #reviewBttn {
   padding: 9px 15px;
   border: none;
-  margin-left: 32px;
+  margin-left: 45px;
   cursor: pointer;
   width: 70%;
   border-radius: 20px;
   background-color: #838485;
   transition: .3s;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 #reviewBttn:hover{
