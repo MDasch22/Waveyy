@@ -16,7 +16,12 @@
     <a href="https://github.com/MDasch22/Waveyy/wiki">started</a>
     --->
   </p>
+  <p align="center"> Screenshots from live site 
+     <img src="https://user-images.githubusercontent.com/95194326/177226054-cdf32245-5137-4e1d-be79-f436870f039b.png" />
+     <img src="https://user-images.githubusercontent.com/95194326/177226290-4d3b8a45-c390-4142-b605-fff846af5f84.png" />
+  </p>
 </p>
+
 <details align="center 'open="open">
   <summary>Table of Contents</summary>
   <ol>
