@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { thunkCreateReview } from "../../store/reviews";
-import './reviewform.css'
-
+import { FaStar } from "react-icons/fa";
+import "./reviewform.css";
 
 export default function ReviewForm(props) {
   const { beachId } = useParams();
@@ -11,49 +11,47 @@ export default function ReviewForm(props) {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [rating, setRating] = useState(1)
-  const [comment, setComment] = useState("")
+  const [rating, setRating] = useState(null);
+  const [comment, setComment] = useState("");
+  const [hover, setHover] = useState(null);
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   useEffect(() => {
     const errors = [];
-    if(!comment) errors.push("Pleae provide your thoughts on this beach!")
-    if(comment.length < 19) errors.push("Review must be at least 20 characters!")
+    if(rating === null) errors.push("Must provide a rating between 1-5!")
+    if (!comment) errors.push("Pleae provide your thoughts on this beach!");
+    if (comment.length < 19)
+      errors.push("Review must be at least 20 characters!");
     setValidationErrors(errors);
-  },[comment])
+  }, [comment, rating]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    setHasSubmitted(true);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+    if (validationErrors.length) return alert("Cannot Submit this Edit");
 
-  setHasSubmitted(true);
+    const newReview = {
+      userId: sessionUser.id,
+      beachId: beachId,
+      rating,
+      comment,
+    };
 
-  if (validationErrors.length) return alert("Cannot Submit this Edit");
+    dispatch(thunkCreateReview(beachId, newReview));
 
-  const newReview = {
-    userId: sessionUser.id,
-    beachId: beachId,
-    rating,
-    comment
-  }
-
-  dispatch(thunkCreateReview( beachId, newReview))
-
-  setRating(1);
-  setComment('');
-  props.setTrigger(false)
-}
+    setRating(1);
+    setComment("");
+    props.setTrigger(false);
+  };
 
   return (
     <>
       <div className="reviewFormSection">
         <h1 className="reviewTitle">Create a review </h1>
-        <form
-          className="reviewForm"
-          onSubmit={handleSubmit}
-        >
+        <form className="reviewForm" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
             <div className="errorHandling">
               <div className="errorTitle">
@@ -61,7 +59,7 @@ const handleSubmit = (e) => {
               </div>
               <ul className="errors">
                 {validationErrors.map((error) => (
-                  <ul key={error} id='error'>
+                  <ul key={error} id="error">
                     <i className="fas fa-spinner fa-pulse"></i>
                     {error}
                   </ul>
@@ -69,28 +67,46 @@ const handleSubmit = (e) => {
               </ul>
             </div>
           )}
-          <label>Rating: </label>
-          <select
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          >
-            <option disabled={true}>---select one---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-          <label>Leave your thoughts: </label>
+          <label className="ratingLabel">Rating: </label>
+          <div className="star-rating-container">
+            {[...Array(5)].map((star, index) => {
+              const ratingVal = index + 1;
+
+              return (
+                <label key={index}>
+                  <input
+                    type="radio"
+                    id="radioBttn"
+                    name="rating"
+                    value={ratingVal}
+                    onClick={() => setRating(ratingVal)}
+                  />
+                  <FaStar
+                    className="star"
+                    color={
+                      ratingVal <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                    }
+                    size={20}
+                    onMouseEnter={() => setHover(ratingVal)}
+                    onMouseLeave={() => setHover(null)}
+                  />
+                </label>
+              );
+            })}
+            <label> {!rating ? 0 : rating} / 5</label>
+          </div>
+          <text>Leave your thoughts: </text>
           <textarea
             placeholder="Start typing here..."
-            id='reviewText'
+            id="reviewText"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button id="reviewBttn" type="submit">Submit your review</button>
+          <button id="reviewBttn" type="submit">
+            Submit your review
+          </button>
         </form>
       </div>
     </>
-  )
+  );
 }
