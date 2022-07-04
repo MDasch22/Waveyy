@@ -22,3 +22,12 @@
   margin-left: 150px;
   margin-right: 150px;
 }
+
+.createEditBttn {
+  margin-right: 5px;
+}
+
+
+.deleteBttn{
+  margin-left: 5px;
+}

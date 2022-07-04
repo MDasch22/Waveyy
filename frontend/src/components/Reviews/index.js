@@ -65,6 +65,7 @@ export default function Reviews() {
                             <button
                               id="deleteReview"
                               onClick={() => dispatch(thunkDeleteReview(review.id))}
+                              className='deleteBttn'
                               >
                               <i className="fa-solid fa-trash"></i>
                             </button>
