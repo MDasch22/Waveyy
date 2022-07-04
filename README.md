@@ -122,37 +122,35 @@ useEffect(() => {
       </div>
     </form>
  ```
-CSS for login form 
+5-Star rating
 ```
-.loginForm {
-  border: 3px solid;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<label className="ratingLabel">Rating: </label>
+          <div className="star-rating-container">
+            {[...Array(5)].map((star, index) => {
+              const ratingVal = index + 1;
 
-.loginTitle {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-}
-
-form #loginGif {
-  width: 100%;
-  height: 175px;
-  position: relative;
-  text-align: center;
-}
-
-input[type=text], input[type=password] {
-  width: 99%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+              return (
+                <label key={index}>
+                  <input
+                    type="radio"
+                    id="radioBttn"
+                    name="rating"
+                    value={ratingVal}
+                    onClick={() => setRating(ratingVal)}
+                  />
+                  <FaStar
+                    className="star"
+                    color={
+                      ratingVal <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                    }
+                    size={20}
+                    onMouseEnter={() => setHover(ratingVal)}
+                    onMouseLeave={() => setHover(null)}
+                  />
+                </label>
+              );
+            })}
+            <label> {!rating ? 0 : rating} / 5</label>
 ```
       
 
