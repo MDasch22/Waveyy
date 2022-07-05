@@ -24,10 +24,10 @@ export default function Beaches() {
 
   return (
     <>
+      <h1 id="title"> Find your Beach </h1>
       <div id='beachCoverImg'>
         <img id='beachCovImg'src="https://i.postimg.cc/Kc0Jwx12/shelter-bnd-Xq-Ha-Qnw-U-unsplash.jpg" alt="beachCoverImg"></img>
       </div>
-      <h1 id="title"> Beaches </h1>
       {sessionUser &&
       <>
         <CreateBeachModal />

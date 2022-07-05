@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className='homePage'>
-      <h1 className='homeTitle'> Find your Beach </h1>
+      <h1 className='homeTitle'> Welcome to Waveyy </h1>
       <div className='slider-content'>
         <BeachSlider slides={SliderData}/>
       </div>

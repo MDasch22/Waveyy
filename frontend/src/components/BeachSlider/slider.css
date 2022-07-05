@@ -1,6 +1,6 @@
 
 .slider {
-  margin-top: 100px;
+  margin-top: 90px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
 
 .sliderImg{
   width: 1275px;
-  height: 750px;
+  height: 800px;
   border: 10px;
   border-radius: 20px;
   margin: 0;

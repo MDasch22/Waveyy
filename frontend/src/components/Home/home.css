@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-top:2px solid grey;
 }
 
 .homeContainer{
@@ -58,4 +59,5 @@
 #cardLink {
   text-decoration: none;
   color: white;
+  margin-top: 15px;
 }
