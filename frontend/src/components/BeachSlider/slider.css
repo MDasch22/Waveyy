@@ -59,3 +59,22 @@
   transform: scale(1.1);
   transition: 1s ease;
 }
+
+@media screen and (max-width: 1620px) {
+  .RightArrow {
+    right: 40px;
+    transition: 2s ease;
+  }
+  .leftArrow {
+    left: 40px;
+    transition: 2s ease;
+  }
+}
+
+
+@media screen and (max-width: 1420px) {
+  .sliderImg {
+    width: 99%;
+    height: auto;
+  }
+}

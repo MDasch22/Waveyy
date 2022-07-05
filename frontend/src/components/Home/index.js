@@ -22,6 +22,7 @@ export default function Home() {
       <div className='slider-content'>
         <BeachSlider slides={SliderData}/>
       </div>
+      <h2 className='homeHeader'> You might find these beaches interesting... </h2>
       <div className='homeCard'>
         {beachArr.map(beach => {
           return (
