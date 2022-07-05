@@ -95,7 +95,7 @@ export default function ReviewForm(props) {
             })}
             <label> {!rating ? 0 : rating} / 5</label>
           </div>
-          <text>Leave your thoughts: </text>
+          <label className="ratingLabel">Leave your thoughts: </label>
           <textarea
             placeholder="Start typing here..."
             id="reviewText"
