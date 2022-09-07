@@ -17,8 +17,10 @@ function ProfileButton({ user }) {
   useEffect(() => {
     if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
+    const closeMenu = (e) => {
+      if(e.path[0].tagName !== "I"){
+        setShowMenu(false);
+      }
     };
 
     document.addEventListener('click', closeMenu);
