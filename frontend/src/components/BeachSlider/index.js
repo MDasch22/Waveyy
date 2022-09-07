@@ -45,7 +45,7 @@ export default function BeachSlider({slides}) {
             <div className={index === current ? 'slide-active': 'slide'} key={index}>
 
               {index === current && (
-                   <img src={slide.image} alt='travelImg' className='sliderImg'></img>
+                   <img src={slide.image} alt='travelImg' className='sliderImg' style={{width: 1100, height: 800}}></img>
                 )}
             </div>
           )
