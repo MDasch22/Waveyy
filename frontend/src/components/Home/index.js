@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { thunkGetAllBeaches } from '../../store/beaches';
+import CreateBeachModal from '../BeachFormModal';
 import BeachSlider from '../BeachSlider';
 import { SliderData } from '../BeachSlider/sliderData'
 import './home.css'
@@ -28,44 +29,53 @@ export default function Home() {
       </div>
         {!sessionUser ?
           <>
-            <h2 className='homeHeader'> You might find these beaches interesting... </h2>
+            <h2 className='homeHeader'> Find your Beach </h2>
             <div className='homeCard'>
-            {beachArr.map(beach => {
-              return (
-                  <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
-                    <div className="homeBeachCard" key={beach.id}>
-                      <div key={beach.id} className='homeContainer'>
-                        <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
-                        <div id="beachDetails">
-                          <h3 id="beachContent">{beach.title}</h3>
-                          <p id="beachLocation">{beach.city} {beach.country}</p>
+              <div className='beach-cards-container'>
+              {beachArr.map(beach => {
+                return (
+                    <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
+                      <div className="homeBeachCard" key={beach.id}>
+                        <div key={beach.id} className='homeContainer'>
+                          <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
+                          <div id="beachDetails">
+                            <h3 id="beachContent">{beach.title}</h3>
+                            <p id="beachLocation">{beach.city} {beach.country}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                )
-              })}
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
           </>
           :
           <>
-            <h2 className='homeHeader'> Explore beaches posted by other users </h2>
+            <div className='sessionUser-home'>
+              <h2 className='homeHeader'> Checkout these beaches posted by other users </h2>
+            </div>
             <div className='homeCard'>
-              {noSession.map(beach => {
-              return (
-                  <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
-                    <div className="homeBeachCard" key={beach.id}>
-                      <div key={beach.id} className='homeContainer'>
-                        <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
-                        <div id="beachDetails">
-                          <h3 id="beachContent">{beach.title}</h3>
-                          <p id="beachLocation">{beach.city} {beach.country}</p>
+              <div>
+                <CreateBeachModal />
+              </div>
+              <div className='beach-cards-container'>
+                {noSession.map(beach => {
+                return (
+                    <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
+                      <div className="homeBeachCard" key={beach.id}>
+                        <div key={beach.id} className='homeContainer'>
+                          <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
+                          <div id="beachDetails">
+                            <h3 id="beachContent">{beach.title}</h3>
+                            <p id="beachLocation">{beach.city} {beach.country}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                )
-              })}
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
           </>
         }

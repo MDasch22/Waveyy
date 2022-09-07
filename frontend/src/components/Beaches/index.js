@@ -23,16 +23,13 @@ export default function Beaches() {
 
 
   return (
-    <>
-      <h1 id="title"> Find your Beach </h1>
+    <div className='beaches-container'>
+      <div className='header-beaches'>
+        <h1 id="title"> Explore all Beaches </h1>
+      </div>
       <div id='beachCoverImg'>
         <img id='beachCovImg'src="https://i.postimg.cc/Kc0Jwx12/shelter-bnd-Xq-Ha-Qnw-U-unsplash.jpg" alt="beachCoverImg"></img>
       </div>
-      {sessionUser &&
-      <>
-        <CreateBeachModal />
-      </>
-      }
       <div className='beachCard'>
         {beachArr.map(beach => {
           return (
@@ -47,6 +44,6 @@ export default function Beaches() {
           })
         }
       </div>
-    </>
+    </div>
   )
 }

@@ -3,12 +3,14 @@ import thunk from "redux-thunk";
 import sessionReducer from './session';
 import beaches from "./beaches";
 import reviews from './reviews'
+import searchBarReducer from "./searchbar";
 
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   beaches,
   reviews,
+  search: searchBarReducer
 });
 
 let enhancer;
