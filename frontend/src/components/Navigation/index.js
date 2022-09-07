@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
+import SearchBar from '../SearchBar/Index';
 
 
 function Navigation({ isLoaded }){
@@ -31,12 +32,15 @@ function Navigation({ isLoaded }){
         <NavLink exact to="/" id="logo">
             <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' alt="logoImg" id="logoImg"></img>
         </NavLink>
-        {isLoaded && sessionLinks}
-        <NavLink to="/beaches">
-          <button id="beachesLink">
-            Explore
-          </button>
-        </NavLink>
+        <SearchBar />
+        <div>
+          {isLoaded && sessionLinks}
+          <NavLink to="/beaches">
+            <button id="beachesLink">
+              Explore
+            </button>
+          </NavLink>
+        </div>
     </ul>
   );
 }

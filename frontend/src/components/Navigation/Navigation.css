@@ -1,10 +1,12 @@
 .navBar {
-  background-image: url("https://i.postimg.cc/Bv8zY2wK/samuel-wong-k-ARg9-I1s-FI-unsplash.jpg") ;
-  background-position: center;
   background-size: cover;
+  background-color: black;
   margin-top: 0;
   padding-top: 10px;
   border-bottom: 2px solid #929496;
+  display: flex;
+  justify-content: space-between;
+
 
 }
 
@@ -108,10 +110,10 @@
 
 .dropdown-content{
   position:absolute;
+  top: 70px;
   right: 1px;
   width: auto;
-  background-image: url("https://i.postimg.cc/L6D2qQ8T/photo-1604515586704-3e8d954b47ec.jpg") ;
-  background-size: 650%;
+  background-color: gray;
   border: 2px solid #929496;
   border-top: none;
   font-weight: bold;
@@ -123,9 +125,9 @@
 .profile-dropdown {
   display: flex;
   flex-direction: column;
-
   margin: 10px;
   width: auto;
+
 }
 
 #writeReviewBttn {
