@@ -3,6 +3,7 @@
   background-color: black;
   margin-top: 0;
   padding-top: 10px;
+  padding-left: 0;
   border-bottom: 2px solid #929496;
   display: flex;
   justify-content: space-between;
@@ -15,7 +16,9 @@
   color: rgb(124, 194, 255);
   margin-bottom: 5px;
   font-weight: bold;
+  margin-left: 20px;
 }
+
 #logoImg {
   height: 50px;
   width: 200px;

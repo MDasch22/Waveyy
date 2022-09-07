@@ -4,22 +4,22 @@
  justify-content: center;
  margin-top: 5px;
  align-items: center;
-
+ margin-left: -60px;
 }
 
 .search-input{
   padding-left: 10px;
   padding-top: 3px;
-  padding-right: 20px;
+  padding-right: 30px;
   padding-bottom: 5px;
-  width: 500px;
+  width: 600px;
   height: 30px;
   border-radius: 10px;
   border: none;
 }
 
 .search-icon{
-  margin-left: -20px;
+  margin-left: -25px;
   margin-top: 4px;
 }
 
@@ -30,12 +30,13 @@
 .searched-results-container{
   border: 1px solid lightgray;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   position: absolute;
-  width: 400px;
+  z-index: 4;
+  width: 500px;
   top: 55px;
   height: auto;
-  transform: translateX(15%);
+
 }
 
 #searched-beach{
@@ -46,6 +47,7 @@
   text-decoration: none;
   color: black;
   margin-bottom: -15px;
+  margin-top: 0;
   padding-left: 10px;
 }
 
@@ -53,6 +55,17 @@
   color: gray;
   font-size: 14px;
   border-bottom: 1px solid gray;
-  padding-bottom: 10px;
   padding-left: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+}
+
+#background-color{
+  border-radius: 5px;
+  padding-top: 5px;
+  transition: .2s ease-in-out;
+}
+
+#background-color:hover{
+  background-color: rgb(197, 197, 197);
 }

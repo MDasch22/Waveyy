@@ -18,6 +18,18 @@ export default function SearchBar() {
     dispatch(thunkSearchAllBeaches())
   }, [dispatch])
 
+  useEffect(() => {
+    const closeSeach = (e) => {
+      console.log(e.path[0].tagName)
+      if(e.path[0].tagName !== 'INPUT'){
+        setFilteredBeaches([])
+        setWordEntry('')
+      }
+    }
+    document.body.addEventListener("click", closeSeach)
+    return () => document.body.removeEventListener("click", closeSeach)
+  })
+
   const handleFilter = (e) => {
     const searchWord = e.target.value;
     setWordEntry(searchWord);
@@ -39,7 +51,7 @@ export default function SearchBar() {
 
   return (
     <div>
-      <form id='search-form'>
+      <form id='search-form' onSubmit={(e) => e.preventDefault()}>
         <input value={wordEntry} placeholder="Find Your Beach" className='search-input' onChange={handleFilter}/>
         <div className='search-icon'>
           {!wordEntry ?
@@ -56,10 +68,12 @@ export default function SearchBar() {
         <div className='searched-results-container'>
           {filteredBeaches.slice(0, 6).map(beach => {
             return (
-              <NavLink onClick={click} id="searched-beach" to={`/beaches/${beach.id}`}>
-                <p id="search-beach-title">{beach.title}</p>
-                <p id="search-city">{beach.city}</p>
-              </NavLink>
+              <div id='background-color'>
+                <NavLink onClick={click} id="searched-beach" to={`/beaches/${beach.id}`}>
+                    <p id="search-beach-title">{beach.title}</p>
+                    <p id="search-city">{beach.city}</p>
+                </NavLink>
+              </div>
             )}
           )}
         </div>
