@@ -21,7 +21,7 @@ export default function SearchBar() {
   useEffect(() => {
     const closeSeach = (e) => {
       console.log(e.path[0].tagName)
-      if(e.path[0].tagName !== 'INPUT' || e.path[0].tagName !== "I"){
+      if(e.path[0].tagName !== "INPUT"){
         setFilteredBeaches([])
         setWordEntry('')
       }

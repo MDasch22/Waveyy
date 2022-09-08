@@ -16,6 +16,7 @@
   height: 30px;
   border-radius: 10px;
   border: none;
+  font-size: 15px;
 }
 
 .search-icon{
@@ -34,7 +35,7 @@
   position: absolute;
   z-index: 4;
   width: 500px;
-  top: 55px;
+  top: 65px;
   height: auto;
 
 }
