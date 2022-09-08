@@ -14,6 +14,16 @@ export default function Reviews() {
   const reviews = useSelector(state => Object.values(state.reviews))
   const sessionUser = useSelector(state => state.session.user);
 
+  const rating = () => {
+    const ratings = reviews.map(review => review.rating)
+    let avgRating = 0
+    ratings.forEach(rating => avgRating += rating)
+    const average = avgRating /= ratings.length
+    return (
+        <p> Rating: {average.toFixed(1)} <FaStar color="#ffc107" /></p>
+      )
+  }
+
 
   useEffect(() => {
     dispatch(thunkGetAllReviews(beachId))
@@ -27,6 +37,9 @@ export default function Reviews() {
   return (
     <>
       <h1>Reviews</h1>
+      <div>
+       {rating()}
+      </div>
       {!reviews.length &&
         <>
           <h2> Doest seem to be any reviews yet... why don't you start us off!</h2>

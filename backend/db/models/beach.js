@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     zipCode: DataTypes.STRING
   }, {});
   Beach.associate = function(models) {
-    Beach.hasMany(models.Review, { foreignKey: 'beachId', onDelete: "CASCADE", hooks: true})
-    Beach.belongsTo(models.User, { foreignKey: 'ownerId'})
+    Beach.hasMany(models.Review, { foreignKey: 'beachId', onDelete: "CASCADE", hooks: 'true'})
+    Beach.belongsTo(models.User, { foreignKey: 'ownerId', onDelete: 'cascade', hooks: 'true'})
+    Beach.hasMany(models.Like, {foreignKey: 'beachId', onDelete: 'cascade', hooks: 'true'})
   };
   return Beach;
 };
