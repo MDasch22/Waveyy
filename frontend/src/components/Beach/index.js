@@ -37,7 +37,7 @@ export default function BeachId() {
           <img src={beach.coverImg} id='beachDetailImg' alt='beachImg'></img>
           <h1>{beach.title}</h1>
           <h2>{beach.city} {beach?.country}</h2>
-          <p>{beach.description}</p>
+          <p className='beach-description'>{beach.description}</p>
 
         </div>
         <div className='reviews'>
@@ -54,7 +54,7 @@ export default function BeachId() {
           <img src={beach.coverImg} id='beachDetailImg' alt='beachImg'></img>
           <h1>{beach.title}</h1>
           <h2>{beach.city} {beach?.country}</h2>
-          <p>{beach.description}</p>
+          <p className='beach-description'>{beach.description}</p>
         </>
         {sessionUser.id === beach.ownerId &&
           (
