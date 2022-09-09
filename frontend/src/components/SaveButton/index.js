@@ -33,7 +33,6 @@ export default function SaveButton({beachId}) {
     const likeId = sessionLike.id
     await dispatch(thunkUnsaved(likeId))
     await dispatch(thunkGetBeachSaved(beachId))
-
   }
 
   return (

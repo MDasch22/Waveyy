@@ -23,7 +23,7 @@ export default function Reviews() {
     ratings.forEach(rating => avgRating += rating)
     const average = avgRating /= ratings.length
     return (
-        <p style={{color: '#ffc107'}}> Rating: {average.toFixed(1)} <FaStar color="#ffc107" /></p>
+        <p className="avg-rating" style={{color: '#ffc107'}}> {average.toFixed(1)} <FaStar color="#ffc107" /></p>
       )
   }
 
@@ -39,9 +39,11 @@ export default function Reviews() {
 
   return (
     <>
-      <h1>Reviews</h1>
-      <div>
-       {rating()}
+      <div id="review-header">
+        <h1>Reviews </h1>
+        <div>
+        {rating()}
+        </div>
       </div>
       {!reviews.length &&
         <>

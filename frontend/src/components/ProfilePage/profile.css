@@ -4,7 +4,8 @@
 }
 
 .profile-page-header{
-  transform: translateX(20%);
+  transform: translateX(60%);
+  width: 400px;
 }
 
 .show-info{
@@ -24,6 +25,33 @@
   position: absolute;
 }
 
+.save-beach-bttn{
+  color: black;
+  cursor: pointer;
+  background-color: #929496;
+  padding: 5px;
+  transition: .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.saved-beached-bttn{
+  margin-left: 15px;
+  border-radius: 5px;
+  color: black;
+  background-color: #929496;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  padding: 5px;
+}
+
+.save-beach-bttn:hover{
+  color: white;
+}
+
+.saved-beached-bttn:hover{
+  color: white;
+}
+
 #profile-tabs{
   margin-top: 40px;
 }
@@ -32,23 +60,96 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
-#beach-link-pp{
-  text-decoration: none;
-  color: white;
-  padding: 10px 20px;
+.sessionBeach-tab{
+  text-align: center;
+  font-size: 18px ;
+
+}
+
+.mybeaches-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
-.beach-img-pp:hover{
-  filter: brightness(75%);
+
+.my-beaches-header{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 15px;
+
+
 }
 
-.beach-title-pp{
+.my-beaches-header2{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 18px
+
+
+}
+
+.my-beaches{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.noBeaches{
+  transform: translateY(800%);
+}
+
+.noBeaches-2{
+ transform: translateY(100%);
+}
+
+#beach-link{
+  position: relative;
+}
+
+.beach-link__img{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.beach-link__overlay{
   position: absolute;
-  top: 330px;
-  margin-left: 90px;
-  font-size: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.beach-link__title{
+  font-size: 18px;
+}
+
+.beach-link__overlay:hover{
+  opacity: 1;
+}
+
+
+.beach-link__overlay > *{
+  transform: translatey(30px);
+  transition: transform 0.25s;
+}
+
+.beach-link__overlay:hover > *{
+  transform: translateY(0);
+}
+
+.beach-link__overlay--blur {
+  backdrop-filter: blur(2px);
 }

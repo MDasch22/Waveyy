@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Like, Beach } = require('../../db/models');
 
 const router = express.Router();
 
@@ -54,5 +54,16 @@ router.post(
     });
   }),
 );
+
+router.get('/saved/:userId', asyncHandler(async(req, res) => {
+  const {userId} = req.params;
+  const saves = await Like.findAll({
+    where: {
+      userId: userId
+    },
+    include: [User, Beach]
+  })
+  return res.json(saves)
+}))
 
 module.exports = router;

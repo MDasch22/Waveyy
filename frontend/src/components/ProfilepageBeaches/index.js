@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+
 import { NavLink } from 'react-router-dom'
-import { thunkGetAllBeaches } from '../../store/beaches'
+
 
 export default function ProfilePageBeaches({beach}) {
 
@@ -11,20 +11,19 @@ export default function ProfilePageBeaches({beach}) {
   return (
     <div id="session-beaches">
       <NavLink
-        id="beach-link-pp"
+        id="beach-link"
         to={`/beaches/${beach.id}`}
-        onMouseEnter={() => setShowOverlay(true)}
-        onMouseLeave={() => setShowOverlay(false)}>
+        >
         <img
-        className='beach-img-pp'
+        className='beach-link__img'
         src={beach.coverImg}
         style={{width:300, height:300}}
         />
-        {showOverlay &&
-          <div>
-            <p className='beach-title-pp'>{beach.title}</p>
-          </div>
-        }
+        <div className='beach-link__overlay beach-link__overlay--blur'>
+          <p className='beach-link__title'>
+            <b>{beach.title}</b>
+          </p>
+        </div>
       </NavLink>
     </div>
   )
