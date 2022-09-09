@@ -1,10 +1,11 @@
 #profile-page-container{
   margin-top: 50px;
-  margin-bottom: 150px;
+  margin-bottom: 190px;
 }
 
 .profile-page-header{
-  transform: translateX(20%);
+  transform: translateX(60%);
+  width: 400px;
 }
 
 .show-info{
@@ -24,6 +25,33 @@
   position: absolute;
 }
 
+.save-beach-bttn{
+  color: black;
+  cursor: pointer;
+  background-color: #929496;
+  padding: 5px;
+  transition: .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.saved-beached-bttn{
+  margin-left: 15px;
+  border-radius: 5px;
+  color: black;
+  background-color: #929496;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  padding: 5px;
+}
+
+.save-beach-bttn:hover{
+  color: white;
+}
+
+.saved-beached-bttn:hover{
+  color: white;
+}
+
 #profile-tabs{
   margin-top: 40px;
 }
@@ -35,6 +63,30 @@
   align-items: center;
 }
 
+.sessionBeach-tab{
+  text-align: center;
+  font-size: 18px ;
+
+}
+
+.mybeaches-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-beaches-header{
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 15px;
+}
+
+.my-beaches{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+}
+
 #beach-link-pp{
   text-decoration: none;
   color: white;
@@ -42,13 +94,23 @@
 }
 
 
+
 .beach-img-pp:hover{
-  filter: brightness(75%);
+  filter: brightness(65%);
 }
 
 .beach-title-pp{
   position: absolute;
-  top: 330px;
-  margin-left: 90px;
+  top: 430px;
+  margin-left: 45px;
+  width: 200px;
   font-size: 20px;
+}
+
+.noBeaches{
+  transform: translateY(1000%);
+  position: absolute;
+  font-size: 20px;
+
+
 }
