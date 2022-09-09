@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     beachId: DataTypes.INTEGER
   }, {});
   Like.associate = function(models) {
-    Like.belongsTo(models.User, {foreignKey: 'userId'})
-    Like.belongsTo(models.Beach, {foreignKey: 'beachId'})
+    Like.belongsTo(models.User, {foreignKey: 'userId', onDelete: "CASCADE", hooks: "true"})
+    Like.belongsTo(models.Beach, {foreignKey: 'beachId', onDelete: "CASCADE", hooks: "true"})
   };
   return Like;
 };

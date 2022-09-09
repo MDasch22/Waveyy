@@ -1,0 +1,54 @@
+#profile-page-container{
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.profile-page-header{
+  transform: translateX(20%);
+}
+
+.show-info{
+  cursor: pointer;
+  margin-top: -20px;
+  padding-left: 20px;
+  width: 80px;
+}
+
+.show-info:hover{
+  color: lightgray;
+}
+
+.user-email{
+  margin-top: -10px;
+  padding-left: 20px;
+  position: absolute;
+}
+
+#profile-tabs{
+  margin-top: 40px;
+}
+
+#session-beaches{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#beach-link-pp{
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+}
+
+
+.beach-img-pp:hover{
+  filter: brightness(75%);
+}
+
+.beach-title-pp{
+  position: absolute;
+  top: 330px;
+  margin-left: 90px;
+  font-size: 20px;
+}

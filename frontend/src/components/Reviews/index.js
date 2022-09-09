@@ -16,11 +16,14 @@ export default function Reviews() {
 
   const rating = () => {
     const ratings = reviews.map(review => review.rating)
+    if(ratings.length === 0) {
+      return null
+    }
     let avgRating = 0
     ratings.forEach(rating => avgRating += rating)
     const average = avgRating /= ratings.length
     return (
-        <p> Rating: {average.toFixed(1)} <FaStar color="#ffc107" /></p>
+        <p style={{color: '#ffc107'}}> Rating: {average.toFixed(1)} <FaStar color="#ffc107" /></p>
       )
   }
 

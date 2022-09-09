@@ -20,7 +20,7 @@ export default function ReviewForm(props) {
   useEffect(() => {
     const errors = [];
     if(rating === null) errors.push("Must provide a rating between 1-5!")
-    if (!comment) errors.push("Pleae provide your thoughts on this beach!");
+    if (!comment) errors.push("Please provide your thoughts on this beach!");
     if (comment.length < 19)
       errors.push("Review must be at least 20 characters!");
     setValidationErrors(errors);
