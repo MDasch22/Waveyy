@@ -9,6 +9,7 @@ import Beaches from "./components/Beaches";
 import BeachId from "./components/Beach";
 import Home from "./components/Home";
 import Footer from './components/Footer';
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,14 +27,17 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route path="/signup">
+          <Route path="/signup" exact={true}>
             <SignupFormPage />
           </Route>
-          <Route exact path="/beaches">
+          <Route path="/beaches" exact={true}>
             <Beaches />
           </Route>
-          <Route path='/beaches/:beachId'>
+          <Route path='/beaches/:beachId' exact={true}>
             <BeachId />
+          </Route>
+          <Route path="/:username" exact={true}>
+            <ProfilePage />
           </Route>
         </Switch>
       )}

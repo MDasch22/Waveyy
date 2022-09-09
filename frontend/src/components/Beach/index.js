@@ -22,7 +22,8 @@ export default function BeachId() {
     dispatch(thunkGetBeach(beachId))
   },[dispatch, beachId])
 
-  const onDelete = async() => {
+  const onDelete = async(e) => {
+    e.preventDefault()
     await dispatch(thunkDeleteBeach(beachId))
     history.push('/beaches')
   }

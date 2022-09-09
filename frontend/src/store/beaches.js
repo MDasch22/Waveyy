@@ -143,7 +143,6 @@ const beaches = (state = {}, action) => {
       return newState
 
     case DELETE_BEACH:
-      newState = {...state}
       delete newState[action.beachId]
       return newState;
 

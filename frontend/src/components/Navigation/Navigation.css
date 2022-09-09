@@ -39,14 +39,14 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 3px 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   transition: .3s;
   background-color: #929496;
+  cursor: pointer;
 }
 
 #beachesLink:hover {
   transform: scale(1.1);
-  border-radius: 20px;
   color: white;
 }
 
@@ -57,9 +57,10 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 3px 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   transition: .3s;
   background-color: #929496;
+  cursor: pointer;
 }
 
 #logIn {
@@ -68,9 +69,10 @@
   margin-left: 5px;
   margin-right: 5px;
   padding: 3px 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   transition: .3s;
   background-color: #929496;
+  cursor: pointer;
 }
 
 #logIn:hover{
@@ -85,11 +87,13 @@
 
 .profileBttn {
   padding: 3px 5px;
-  border-radius: 15px;
+  border-radius: 5px;
   float: right;
   margin-top: 20px;
   margin-right: 20px;
-  background-color: #929496
+  background-color: #929496;
+  transition: .3s ease-in-out;
+  cursor: pointer;
 }
 
 .profileBttn:hover{
@@ -98,40 +102,65 @@
 }
 
 .logoutBttn {
-  padding: 5px 8px;
-  border-radius: 15px;
-  float: right;
+  color: #929496;
   margin-top: 5px;
-  margin-right: 50px;
-  background-color: #929496
+  cursor: pointer;
+  transition: .3s ease-in-out;
 }
 
 .logoutBttn:hover {
-  transform: scale(1.1);
-  color: aliceblue;
-  background-color: red;
+  color: red;
 }
 
 .dropdown-content{
   position:absolute;
-  top: 70px;
-  right: 1px;
+  z-index: 7;
+  top: 75px;
+  right: 8px;
   width: auto;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   border: 1px solid #929496;
-  border-top: none;
   font-weight: bold;
   color: white;
-  text-shadow: 0 0 5px #000000, 0 0 10px #000000
+  text-shadow: 0 0 5px #000000, 0 0 10px #000000;
+}
 
+
+
+#pointer-arrow{
+  z-index: 3;
+  position: absolute;
+  right: 15px;
+  top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom:  10px solid rgb(255, 255, 255);
 }
 
 .profile-dropdown {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  width: auto;
+  width: 120px;
+}
 
+.profile-dropdown ul{
+  padding: 0;
+}
+
+.dropdown-info{
+  border-bottom: 1px solid lightgray;
+}
+
+.link-profile{
+  text-decoration: none;
+  color: #929496;
+  margin-top: -15px;
+  transition: .3s ease-in-out;
+}
+
+.link-profile:hover{
+  color: white;
 }
 
 #writeReviewBttn {
@@ -152,5 +181,4 @@
 
 .notLoggedIn {
   display: flex;
-
 }
