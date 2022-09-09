@@ -4,7 +4,7 @@
  justify-content: center;
  margin-top: 12px;
  align-items: center;
- margin-left: -60px;
+ margin-right: 60px;
 }
 
 .search-input{
@@ -17,7 +17,9 @@
   border-radius: 10px;
   border: none;
   font-size: 15px;
+  transition: .4s ease-in-out;
 }
+
 
 .search-icon{
   margin-left: -25px;
@@ -34,10 +36,10 @@
   border-radius: 5px;
   position: absolute;
   z-index: 4;
-  width: 500px;
+  width: 600px;
   top: 65px;
   height: auto;
-
+  transition: .4s ease-in-out;
 }
 
 #searched-beach{
@@ -69,4 +71,38 @@
 
 #background-color:hover{
   background-color: rgb(197, 197, 197);
+}
+
+
+@media screen and (max-width: 1060px) {
+  .search-input{
+    width: 500px;
+  }
+  .searched-results-container{
+    width: 500px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .search-input{
+    width: 350px;
+  }
+  .searched-results-container{
+    width: 350px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .search-input{
+    width: 250px;
+  }
+  .searched-results-container{
+    width: 250px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .search-input{
+    width: 150px;
+  }
+  .searched-results-container{
+    width: 150px;
+  }
 }
