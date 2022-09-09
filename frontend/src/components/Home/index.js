@@ -29,10 +29,10 @@ export default function Home() {
       </div>
         {!sessionUser ?
           <>
-            <h2 className='homeHeader'> Find your Beach </h2>
+            <h2 className='noSessionHeader'> Find your Beach </h2>
             <div className='homeCard'>
               <div className='beach-cards-container'>
-              {beachArr.map(beach => {
+              {beachArr.slice(0, 6).map(beach => {
                 return (
                     <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
                       <div className="homeBeachCard" key={beach.id}>
@@ -52,12 +52,19 @@ export default function Home() {
           </>
           :
           <>
-            <div className='sessionUser-home'>
-              <h2 className='homeHeader'> Checkout these beaches posted by other users </h2>
+            <div className='create-beach-modal'>
+              <div id="create-modal">
+                <CreateBeachModal />
+              </div>
+            </div>
+            <div className='or'>
+              <hr id="left-line"></hr>
+              <p id="or-tag"><b>OR</b></p>
+              <hr id="right-line"></hr>
             </div>
             <div className='homeCard'>
-              <div>
-                <CreateBeachModal />
+              <div className='sessionUser-home'>
+                <h2 className='homeHeader'> Checkout these beaches posted by other users </h2>
               </div>
               <div className='beach-cards-container'>
                 {noSession.map(beach => {
