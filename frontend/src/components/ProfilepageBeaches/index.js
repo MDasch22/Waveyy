@@ -17,7 +17,7 @@ export default function ProfilePageBeaches({beach}) {
         <img
         className='beach-link__img'
         src={beach.coverImg}
-        style={{width:300, height:300}}
+        style={{width: 300,height:300}}
         />
         <div className='beach-link__overlay beach-link__overlay--blur'>
           <p className='beach-link__title'>
