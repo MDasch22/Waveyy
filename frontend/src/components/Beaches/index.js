@@ -21,6 +21,7 @@ export default function Beaches() {
   const beachArr = useSelector(state => Object.values(state.beaches))
   const sessionUser = useSelector(state => state.session.user);
 
+  const shuffledBeaches = beachArr.sort(() => Math.random() - 0.5)
 
   return (
     <div className='beaches-container'>
@@ -31,7 +32,7 @@ export default function Beaches() {
         <img id='beachCovImg'src="https://i.postimg.cc/Kc0Jwx12/shelter-bnd-Xq-Ha-Qnw-U-unsplash.jpg" alt="beachCoverImg"></img>
       </div>
       <div className='beachCard'>
-        {beachArr.map(beach => {
+        {shuffledBeaches.map(beach => {
           return (
             <Link to={`/beaches/${beach.id}`} id="beachLink" key={beach.id}>
               <div key={beach.id} className='beachContainer'>

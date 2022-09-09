@@ -4,6 +4,7 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const beachRouter = require('./beaches.js');
 const reviewRouter = require('./reviews.js');
+const likesRouter = require('./likes.js')
 
 router.use('/session', sessionRouter);
 
@@ -12,6 +13,8 @@ router.use('/users', usersRouter);
 router.use('/beaches', beachRouter);
 
 router.use('/reviews', reviewRouter);
+
+router.use('/likes', likesRouter);
 
 module.exports = router;
 

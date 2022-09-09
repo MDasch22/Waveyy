@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { thunkGetBeach, thunkDeleteBeach } from '../../store/beaches';
 import EditFormModal from '../EditBeachModal';
 import Reviews from '../Reviews';
+import SaveButton from '../SaveButton';
 import './beach.css'
 
 
@@ -58,7 +59,7 @@ export default function BeachId() {
         </>
         {sessionUser.id === beach.ownerId &&
           (
-            <>
+            <div id="edit-delete-selection">
               <EditFormModal />
               <button
               onClick={onDelete}
@@ -66,9 +67,12 @@ export default function BeachId() {
               >
                 <i className="fa-solid fa-trash fa-lg"></i>
               </button>
-            </>
+            </div>
           )
         }
+        <div>
+          <SaveButton beachId={beachId} />
+        </div>
       </div>
       <div className='reviews'>
         <Reviews />

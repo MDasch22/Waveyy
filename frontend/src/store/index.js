@@ -4,13 +4,15 @@ import sessionReducer from './session';
 import beaches from "./beaches";
 import reviews from './reviews'
 import searchBarReducer from "./searchbar";
+import likesReducer from "./likes";
 
 
 const rootReducer = combineReducers({
   session: sessionReducer,
+  saved: likesReducer,
+  search: searchBarReducer,
   beaches,
   reviews,
-  search: searchBarReducer
 });
 
 let enhancer;

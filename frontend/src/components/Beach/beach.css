@@ -1,6 +1,10 @@
 .beachDetails{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829
+  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829;
+  align-items: center;
 }
 
 #beachDetailImg{
@@ -18,20 +22,41 @@
   margin-bottom: 150px;
 }
 
-.beachDetails p {
-  margin-left: 150px;
-  margin-right: 150px;
-}
-
 .createEditBttn {
   margin-right: 5px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.createEditBttn:hover{
+  background-color: rgb(187, 187, 187);
+  color: white;
+}
+
+.deleteBttn:hover{
+  background-color: rgb(187, 187, 187);
+  color: white;
 }
 
 
 .deleteBttn{
+  padding: 3px 5px;
   margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .3s ease-in-out;
 }
 
 .beach-description{
   font-size: 18px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#edit-delete-selection{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 15px;
 }
