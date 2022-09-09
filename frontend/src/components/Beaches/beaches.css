@@ -72,9 +72,9 @@
   height: 40px;
   font-size: 30px;
   font-weight: bold;
-  border-radius: 15px;
-  background-color: #97b4d1;
-  color: white;
+  border-radius: 5px;
+  background-color: #929496;
+  color: black;
   cursor: pointer;
   margin-left: 20px;
   transition: .3s;
@@ -85,7 +85,7 @@
 
 .createBeachBttn:hover{
   transform: scale(1.05);
-  background-color: #73b0ec ;
+  color: white;
   box-shadow: 0 0 10px 4px rgba(151, 150, 150, 0.897);
 }
 

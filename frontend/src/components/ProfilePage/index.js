@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { thunkGetAllBeaches } from '../../store/beaches'
+import { thunkGetUserSaved } from '../../store/likes'
+import CreateBeachModal from '../BeachFormModal'
 import ProfilePageBeaches from '../ProfilepageBeaches'
 
 import './profile.css'
@@ -11,6 +13,7 @@ export default function ProfilePage() {
 
   const sessionUser = useSelector(state => state.session.user)
   const beaches = useSelector(state => Object.values(state.beaches))
+  const userSaved = useSelector(state => Object.values(state.saved))
 
   const [showInfo, setShowInfo] = useState(false)
   const [showBeaches, setShowBeaches] = useState(true)
@@ -30,7 +33,9 @@ export default function ProfilePage() {
   }
 
   useEffect(() => {
+    window.scroll(0, 0)
     dispatch(thunkGetAllBeaches())
+    dispatch(thunkGetUserSaved(sessionUser.id))
   }, [dispatch])
 
   return (
@@ -49,7 +54,6 @@ export default function ProfilePage() {
       {showBeaches && (
         <div id="session-beaches">
           <div className='sessionBeach-tab'>
-
             <div id="session-beaches">
               {userBeaches.length > 0 ?
               <div className='-mybeaches-container'>
@@ -62,7 +66,12 @@ export default function ProfilePage() {
                 </div>
               </div>
               :
-                <p className='noBeaches'>No Beaches Yet ...</p>
+                <>
+                  <div className='noBeaches-2'>
+                    <p >No Beaches Yet ...</p>
+                    <CreateBeachModal / >
+                  </div>
+                </>
               }
             </div>
           </div>
@@ -71,7 +80,22 @@ export default function ProfilePage() {
       {showSaved && (
         <div id="session-beaches">
           <div className='sessionBeach-tab'>
-            <p className='my-beaches-header'> Saved Beaches <i className="fa-solid fa-bookmark "></i> </p>
+            {userSaved.length > 0 ?
+              <div className='mybeaches-container'>
+                <p className='my-beaches-header2'> Saved Beaches <i className="fa-solid fa-bookmark "></i> </p>
+                <div className='my-beaches'>
+                  {userSaved.map(beach => {
+                    return (
+                      <ProfilePageBeaches beach={beach.Beach} />
+                  )})}
+                </div>
+              </div>
+              :
+              <p className='noBeaches'> Nothing saved yet...</p>
+            }
+          </div>
+          <div>
+
           </div>
         </div>
       )}

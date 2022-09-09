@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf"
 const SAVED = 'likes/saved'
 const UNSAVED = 'likes/unsaved'
 const GET_ALL_SAVED = 'likes/getAllSaved'
+const GET_USER_SAVED = 'likes/getUserSaved'
 
 // ACTION
 const actionSaved = (like) => {
@@ -22,6 +23,13 @@ const actionUnsaved = (likeId) => {
 const actionGetBeachSaved = (likes) => {
   return {
     type: GET_ALL_SAVED,
+    likes
+  }
+}
+
+const actionGetUserSaved = (likes) => {
+  return {
+    type: GET_USER_SAVED,
     likes
   }
 }
@@ -64,6 +72,16 @@ export const thunkGetBeachSaved = (beachId) => async(dispatch) => {
   }
 }
 
+export const thunkGetUserSaved = (userId) => async(dispatch) => {
+  const response = await csrfFetch(`/api/users/saved/${userId}`);
+
+  if(response.ok){
+    const data = await response.json()
+    dispatch(actionGetUserSaved(data))
+    return data
+  }
+}
+
 
 
 // REDUCER
@@ -83,6 +101,13 @@ const likesReducer = (state = initialState, action) => {
       return newState
 
     case GET_ALL_SAVED:
+      newState = {}
+      action.likes.forEach(like => {
+        newState[like.id] = like
+      })
+      return newState
+
+    case GET_USER_SAVED:
       newState = {}
       action.likes.forEach(like => {
         newState[like.id] = like

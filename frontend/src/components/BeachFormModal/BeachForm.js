@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { thunkCreateBeach } from "../../store/beaches";
 import './beachform.css'
 
 export default function BeachForm(props) {
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
   const [coverImg, setCoverImg] = useState("");
@@ -84,6 +86,7 @@ export default function BeachForm(props) {
     setValidationErrors([]);
     props.setTrigger(false);
     alert("Your beach was created!")
+    history.push(`/${sessionUser.username}`)
   };
 
   return (
