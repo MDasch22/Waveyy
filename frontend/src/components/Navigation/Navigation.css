@@ -91,6 +91,7 @@
   float: right;
   margin-top: 20px;
   margin-right: 20px;
+  margin-left: 5px;
   background-color: #929496;
   transition: .3s ease-in-out;
   cursor: pointer;

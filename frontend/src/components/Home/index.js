@@ -23,7 +23,6 @@ export default function Home() {
 
   return (
     <div className='homePage'>
-      <h1 className='homeTitle'> Welcome to Waveyy </h1>
       <div className='slider-content'>
         <BeachSlider slides={SliderData}/>
       </div>
@@ -52,16 +51,6 @@ export default function Home() {
           </>
           :
           <>
-            <div className='create-beach-modal'>
-              <div id="create-modal">
-                <CreateBeachModal />
-              </div>
-            </div>
-            <div className='or'>
-              <hr id="left-line"></hr>
-              <p id="or-tag"><b>OR</b></p>
-              <hr id="right-line"></hr>
-            </div>
             <div className='homeCard'>
               <div className='sessionUser-home'>
                 <h2 className='homeHeader'> Checkout these beaches posted by other users </h2>

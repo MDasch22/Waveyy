@@ -5,9 +5,11 @@ footer {
   margin-top: 400px;
   margin-bottom: -40px;
   padding-bottom: 27px;
-  background-image: url("https://i.postimg.cc/Bv8zY2wK/samuel-wong-k-ARg9-I1s-FI-unsplash.jpg") ;
+  /* background-image: url("https://i.postimg.cc/Bv8zY2wK/samuel-wong-k-ARg9-I1s-FI-unsplash.jpg") ; */
   background-position: center;
   background-size: cover;
+  background-color: black;
+  border-top: 1px solid lightgray;
 
 }
 
@@ -16,7 +18,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+  text-shadow: 0 0 5px black, 0 0 10px black;
   margin-top: 15px;
 
 }
@@ -25,7 +27,7 @@ footer {
   margin-top: 25px;
   margin-left: 30px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
 
 }
 
@@ -33,7 +35,7 @@ footer {
   margin-top: 25px;
   margin-left: 20px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 #linkGit:hover{
@@ -45,6 +47,6 @@ footer {
 }
 
 .footerTitle {
-  color:black;
+  color: white;
   font-weight: bold;
 }

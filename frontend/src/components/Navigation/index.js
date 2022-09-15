@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import SearchBar from '../SearchBar/Index';
+import CreateBeachModal from '../BeachFormModal';
 
 
 function Navigation({ isLoaded }){
@@ -35,11 +36,14 @@ function Navigation({ isLoaded }){
         <SearchBar />
         <div>
           {isLoaded && sessionLinks}
-          <NavLink to="/beaches">
-            <button id="beachesLink">
-              Explore
-            </button>
-          </NavLink>
+          <>
+            <NavLink to="/beaches">
+              <button id="beachesLink">
+                Explore
+              </button>
+            </NavLink>
+            <CreateBeachModal />
+          </>
         </div>
     </ul>
   );

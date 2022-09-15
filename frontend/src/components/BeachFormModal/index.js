@@ -8,7 +8,7 @@ function CreateBeachModal() {
 
   return (
     <>
-      <button className="createBeachBttn" onClick={() => setShowModal(true)}>Create Beach</button>
+      <button id="beachesLink" onClick={() => setShowModal(true)}>Create Beach</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <BeachForm trigger={showModal} setTrigger={setShowModal}/>
