@@ -37,6 +37,7 @@
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
+  transition: .5s ease-in-out;
 }
 
 .beachContainer:hover{
@@ -87,14 +88,15 @@
 #beachContentTitle {
   text-decoration: none;
   color: white;
-  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829;
+
   font-size: 30px;
 }
 
 
 #beachLink {
   text-decoration: none;
-  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829;
+  color: white;
+
 
 }
 

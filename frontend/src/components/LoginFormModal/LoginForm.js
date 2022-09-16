@@ -41,7 +41,7 @@ function LoginForm(props) {
       </div>
       <label id='signUpRed'>New to Waveyy?
         <Link id='signUpLink' to="/signup" onClick={signUp}>
-          <label>Sign Up</label>
+          <label id='signupLink'>Sign Up</label>
         </Link>
       </label>
       <ul>
@@ -49,7 +49,7 @@ function LoginForm(props) {
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <label>
+      <label className="login-label">
         Username or Email
         <input
           type="text"
@@ -58,7 +58,7 @@ function LoginForm(props) {
           required
         />
       </label>
-      <label>
+      <label className="login-label">
         Password
         <input
           type="password"
@@ -69,7 +69,12 @@ function LoginForm(props) {
       </label>
       <div className="logInBttn">
         <button id='loginFormBttn' type="submit">Log In</button>
-        <button id='loginGuestBttn' onClick={demoSubmit}>Continue as Guest</button>
+        <div className="-or-">
+          <hr id="or-lines" style={{width: 60, height: 0}}></hr>
+          <p id="or-text"> OR </p>
+          <hr id="or-lines" style={{width: 60, height: 0}}></hr>
+        </div>
+        <button id='loginGuestBttn' onClick={demoSubmit}> Continue as Guest <i className="fa-solid fa-user"></i></button>
       </div>
     </form>
   );

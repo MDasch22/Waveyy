@@ -13,7 +13,7 @@
   border-radius: 20px;
   margin: 0;
   width: 1440px;
-  margin-top: 13px;
+  margin-top: 16px;
   height: 650px;
 }
 
@@ -70,13 +70,5 @@
   .leftArrow {
     left: 40px;
     transition: 2s ease;
-  }
-}
-
-
-@media screen and (max-width: 1420px) {
-  .sliderImg {
-    width: 99%;
-    height: auto;
   }
 }

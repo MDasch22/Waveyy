@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { thunkGetAllBeaches } from '../../store/beaches'
 import { thunkGetUserSaved } from '../../store/likes'
 import CreateBeachModal from '../BeachFormModal'
-import ProfilePageBeaches from '../ProfilepageBeaches'
+import SplashBeach from '../SplashPageBeach'
 
 import './profile.css'
 
@@ -18,7 +18,6 @@ export default function ProfilePage() {
   const [showInfo, setShowInfo] = useState(false)
   const [showBeaches, setShowBeaches] = useState(true)
   const [showSaved, setShowSaved] = useState(false)
-  const [showOverlay, setShowOverlay] = useState(false)
 
   const userBeaches = beaches.filter(beach => beach.ownerId === sessionUser.id)
 
@@ -41,7 +40,7 @@ export default function ProfilePage() {
   return (
     <div id="profile-page-container">
       <div className='profile-page-header'>
-        <h1>Welcome {sessionUser.username}</h1>
+        <h1 className='profile-page-username'>Welcome {sessionUser.username}</h1>
         <p className='show-info' onClick={() => setShowInfo(!showInfo)}>Show email</p>
         {showInfo &&
           <p className='user-email'>{sessionUser.email}</p>
@@ -61,7 +60,7 @@ export default function ProfilePage() {
                 <div className='my-beaches'>
                   {userBeaches.map(beach => {
                   return(
-                    <ProfilePageBeaches beach={beach} />
+                    <SplashBeach beach={beach}/>
                   )})}
                 </div>
               </div>
@@ -86,7 +85,7 @@ export default function ProfilePage() {
                 <div className='my-beaches'>
                   {userSaved.map(beach => {
                     return (
-                      <ProfilePageBeaches beach={beach.Beach} />
+                      <SplashBeach beach={beach.Beach} />
                   )})}
                 </div>
               </div>

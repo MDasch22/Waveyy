@@ -34,7 +34,7 @@ export default function Beaches() {
 
     return (
       <>
-        <p className='rating'>Rating: {avgRating.toFixed(1)}</p>
+        <p className='rating'> {beach.Reviews.length} reviews (Average Rating: {avgRating.toFixed(1)})</p>
       </>
       )
   }
@@ -62,9 +62,9 @@ export default function Beaches() {
                 </div>
                 <div className='beachCard-content'>
                   <p id="beachContentTitle">{beach.title}</p>
+                  {ratings(beach)}
                   <p>{beach.city} {beach.country}</p>
                   <p>{beach.description}</p>
-                  {ratings(beach)}
                 </div>
               </div>
             </Link>

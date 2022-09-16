@@ -4,15 +4,25 @@
 }
 
 .profile-page-header{
-  transform: translateX(60%);
-  width: 400px;
+  /* transform: translateX(60%); */
+  /* width: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-page-username{
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+
 }
 
 .show-info{
   cursor: pointer;
-  margin-top: -20px;
-  padding-left: 20px;
-  width: 80px;
+  margin-top: -10px;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 }
 
 .show-info:hover{
@@ -20,9 +30,12 @@
 }
 
 .user-email{
-  margin-top: -10px;
-  padding-left: 20px;
+  margin-top: 3rem;
+  /* padding-left: 20px; */
   position: absolute;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+  font-size: 18px;
 }
 
 .save-beach-bttn{
@@ -80,7 +93,8 @@
 .my-beaches-header{
   border-bottom: 1px solid lightgray;
   padding-bottom: 15px;
-
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 
 }
 
@@ -88,7 +102,9 @@
   border-bottom: 1px solid lightgray;
   padding-bottom: 15px;
   text-align: center;
-  font-size: 18px
+  font-size: 18px;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 
 
 }
