@@ -30,7 +30,7 @@ function Navigation({ isLoaded }){
       </>
     );
   }
-
+//
   return (
     <ul className='navBar'>
         <NavLink exact to="/" id="logo">

@@ -1,5 +1,5 @@
 .loginForm {
-  border: 3px solid;
+  border: 3px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,8 @@
   position: absolute;
   top: 10%;
   left: 20%;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 }
 
 form #loginGif {
@@ -19,13 +21,20 @@ form #loginGif {
 }
 
 input[type=text], input[type=password] {
-  width: 99%;
-  padding: 12px 20px;
+  width: 100%;
+  padding: 12px 15px;
   margin: 8px 0;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
   box-sizing: border-box;
+
+}
+
+.login-label{
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+
 }
 
 .logInBttn {
@@ -33,46 +42,79 @@ input[type=text], input[type=password] {
 }
 
 #loginFormBttn {
-  padding: 9px 15px;
+  padding: 9px 9px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 70%;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #838485;
   transition: .3s;
 }
 
 #loginGuestBttn {
-  padding: 9px 15px;
+  padding: 9px 9px;
   margin: 8px 0;
+  font-size: 15px;
   border: none;
   cursor: pointer;
-  width: 70%;
-  border-radius: 20px;
-  background-color: #838485;
+  width: 150px;
+  border-radius: 5px;
+  color: rgb(172, 172, 172);
+  background-color: transparent;
   transition: .3s;
+  margin-bottom: 20px;
+  margin-top: -5px;
 }
 
 #loginFormBttn:hover{
   transform: scale(1.1);
-  color:aliceblue
+  color:white
 }
 
 #loginGuestBttn:hover{
   transform: scale(1.1);
-  color:aliceblue
+  color:white
 }
 
 #signUpRed {
   margin-top: 10px;
   margin-bottom: -15px;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+  font-size: 18px;
 }
 
 #signUpLink{
   margin-left: 5px;
   color: rgba(0, 153, 255, 0.603);
+  cursor: pointer;
+}
+
+#signupLink{
+  cursor: pointer;
+  font-family: 'Gruppo', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+
 }
 #signUpLink:hover{
   color: rgb(0, 238, 255);
+
+}
+
+.-or-{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+#or-lines{
+  margin-top: 25px;
+}
+
+#or-text{
+  margin-left: 5px;
+  margin-right: 5px;
 }

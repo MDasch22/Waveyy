@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid;
+  border: 3px solid white;
   width: 400px;
 }
 
@@ -12,23 +12,31 @@
   margin-top: 100px;
 }
 
+.signupForm > label {
+  color: white;
+  font-family: 'Gruppo', sans-serif;
+
+}
+
 #signupTitle {
   margin-bottom: -5px;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 }
 
 #signupBttn {
-  padding: 14px 20px;
-  margin-top: 10px;
+  padding: 7px;
+  margin-top: 30px;
   margin-bottom: 20px;
   border: none;
   cursor: pointer;
   width: 40%;
   background-color: #838485;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 150px;
   transition: .3s;
 }
 #signupBttn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   color: white
 }
