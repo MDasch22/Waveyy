@@ -19,6 +19,7 @@ export default function BeachId() {
   const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
+    window.scroll(0,0)
     dispatch(thunkGetBeach(beachId))
   },[dispatch, beachId])
 
