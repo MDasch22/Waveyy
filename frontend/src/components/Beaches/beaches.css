@@ -2,49 +2,47 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  /* text-align: center; */
   align-items: center;
 }
 
 #title{
   text-align: center;
   margin-bottom: -30px;
+  color: white;
+  font-family: 'Gruppo', sans-serif;
 }
 
 .header-beaches{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  /* text-align: center; */
 }
 
 .beachCard {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  width: 1400px;
   margin-bottom:-150px;
+  margin-top: 50px;
 }
 
 .beachContainer {
-  float: left;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  align-items: center;
   border: 2px solid rgb(0, 0, 0);
-  padding: 5px;
-  margin: 10px;
-  width: 350px;
   height: 350px;
-  background-image: url("https://wallpaperaccess.com/full/1767482.jpg");
-  background-position: fixed;
-  background-size: 100%;
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
 }
 
 .beachContainer:hover{
-  box-shadow: 0 0 15px 10px rgba(151, 150, 150, 0.897);
+  box-shadow: 2px 2px 10px 2px rgb(138, 138, 138);
   transition: box-shadow .3s;
-  border: 2px solid white;
+  border: 2px solid rgb(138, 138, 138);
 }
 
 #beachCoverImg{
@@ -55,17 +53,17 @@
   display: inline;
   align-items: center;
   margin-top: 80px;
-  width: 1500px;
-  height: 800px;
+  width: 1440px;
+  height: 650px;
   overflow-x: none;
   border-radius: 10px;
 }
 
-#beachImg {
-  width: 350px;
-  height: 230px;
-  padding-bottom: 15px;
-  border-radius: 10px;
+#beachImg{
+  width: 520px ;
+  height: 348px;
+  margin-top: 3px;
+  border-radius: 5px ;
 }
 
 .createBeachBttn{
@@ -89,8 +87,10 @@
 #beachContentTitle {
   text-decoration: none;
   color: white;
-  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829
+  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829;
+  font-size: 30px;
 }
+
 
 #beachLink {
   text-decoration: none;
@@ -101,4 +101,30 @@
 #beachLink p {
   text-decoration: none;
   color:white;
+}
+
+.beachCard-content{
+  margin-left: 20px;
+
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  transform: translateY(15rem);
+}
+
+.toTop{
+  background-color: #222;
+  border: none;
+  font-size: 20px;
+  font-family: 'Gruppo', sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.toTop:hover{
+  color: lightgray;
 }

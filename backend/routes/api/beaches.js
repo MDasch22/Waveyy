@@ -11,6 +11,7 @@ const router = express.Router()
 // ------------------GET ALL BEACHES------------------//
 router.get('/', async (req, res) => {
   const beaches = await Beach.findAll({
+    include:[Review]
   });
   return res.json(beaches)
 })

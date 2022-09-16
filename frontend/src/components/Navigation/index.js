@@ -15,7 +15,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <ProfileButton user={sessionUser} />
+        <CreateBeachModal />
+      </>
     );
   } else {
     sessionLinks = (
@@ -32,6 +35,7 @@ function Navigation({ isLoaded }){
     <ul className='navBar'>
         <NavLink exact to="/" id="logo">
             <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' alt="logoImg" id="logoImg"></img>
+            {/* <p id="waveyy">Waveyy</p> */}
         </NavLink>
         <SearchBar />
         <div>
@@ -42,7 +46,6 @@ function Navigation({ isLoaded }){
                 Explore
               </button>
             </NavLink>
-            <CreateBeachModal />
           </>
         </div>
     </ul>

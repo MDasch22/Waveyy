@@ -1,0 +1,51 @@
+#splash-link{
+  position: relative;
+  /* padding: 0 2rem; */
+}
+
+.splash-link-img{
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.splash-link__overlay{
+  position: absolute;
+  bottom: 1.5rem;
+  left: 20px;
+  width: 88.5%;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.splash-link__title{
+  font-size: 20px;
+}
+
+.splash-link__city{
+  margin-top: -20px;
+}
+
+.splash-link__overlay:hover{
+  opacity: 1;
+}
+
+.splash-link__overlay > *{
+  transform: translatey(30px);
+  transition: transform 0.25s;
+}
+
+.splash-link__overlay:hover > *{
+  transform: translatey(0);
+}
+
+.splash-link__overlay--blur{
+  backdrop-filter: blur(2px);
+}
