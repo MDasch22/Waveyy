@@ -1,8 +1,26 @@
+.reviews-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(5%);
 
+
+}
 
 #review-header{
   display: flex;
   flex-direction: row;
+
+}
+
+.reviewData-header{
+  color: white;
+  font-size: 25px;
+}
+
+.reviewData{
+  color: white;
+  font-size: 18px;
 }
 
 .avg-rating{
@@ -11,20 +29,35 @@
   font-size: 30px;
 }
 
-.reviews-table{
-  border-collapse: collapse;
-  background-color: #313131;;
-  border-radius: 8px;
-  margin: 15px 0;
-  margin-bottom: -400px;
-  color: white;
+.rating-div{
+  font-size: 24px;
+}
+
+#single-review-container{
+  display: flex;
+  flex-direction: column;
+  width:80% ;
+  margin-right: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
 }
 
 
 
 #deleteReview {
-  margin-right: 10px;
+  margin-left: 0;
   margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #222;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  transform: translateX(65rem);
+}
+
+#deleteReview:hover{
+  color: red;
 }
 
 td{

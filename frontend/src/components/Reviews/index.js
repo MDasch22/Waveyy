@@ -23,7 +23,7 @@ export default function Reviews() {
     ratings.forEach(rating => avgRating += rating)
     const average = avgRating /= ratings.length
     return (
-        <p className="avg-rating" style={{color: '#ffc107'}}> {average.toFixed(1)} <FaStar color="#ffc107" /></p>
+        <p className="avg-rating" style={{color: 'rgb(253, 231, 135)'}}> {average.toFixed(1)} <FaStar color="rgb(253, 231, 135)" /></p>
       )
   }
 
@@ -38,7 +38,7 @@ export default function Reviews() {
   }
 
   return (
-    <>
+    <div className='reviews-container'>
       <div id="review-header">
         <h1 style={{color:'white'}}>Reviews </h1>
         <div>
@@ -63,43 +63,81 @@ export default function Reviews() {
       }
       {reviews.length > 0 &&
         <>
-          <table className='reviews-table'>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Rating</th>
-                <th>Review</th>
-              </tr>
-            {reviews.map(review => {
-              return (
-                <tr key={review.id}>
-                  <td className='reviewData'>{review.User.username}</td>
-                  <td className='star-rating'>{review.rating} <FaStar color="#ffc107" /></td>
-                  <td className='reviewData'>{review.comment}</td>
-                  <td>
-                    { sessionUser?.id === review.userId &&
-                      (
-                        <>
+          {reviews.reverse().map(review => {
+            return (
+              <div id="single-review-container" key={review.id}>
+                <p className='reviewData-header'>{review.User.username}</p>
+                <div className='rating-div'>
+                  {review.rating === 1 && (
+                      <>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                      </>
+                      )}
+                  {review.rating === 2 && (
+                      <>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                      </>
+                      )}
+                  {review.rating === 3 && (
+                      <>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="lightgray"/>
+                          <FaStar color="lightgray"/>
+                      </>
+                      )}
+                  {review.rating === 4 && (
+                      <>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="lightgray"/>
 
-                            <button
-                              id="deleteReview"
-                              onClick={() => dispatch(thunkDeleteReview(review.id))}
-                              className='deleteBttn'
-                              >
-                              <i className="fa-solid fa-trash"></i>
-                            </button>
+                      </>
+                      )}
+                  {review.rating === 5 && (
+                      <>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                          <FaStar color="rgb(253, 231, 135)"/>
+                      </>
+                      )}
+                </div>
+                <p className='reviewData'>{review.comment}</p>
+                <div>
+                  { sessionUser?.id === review.userId &&
+                    (
+                      <>
 
-                        </>
-                      )
-                    }
-                  </td>
-                  </tr>
-                )
-              })}
-            </thead>
-          </table>
+                          <button
+                            id="deleteReview"
+                            onClick={() => dispatch(thunkDeleteReview(review.id))}
+                            className='deleteBttn'
+                            >
+                            Delete
+                          </button>
+
+                      </>
+                    )
+                  }
+                </div>
+              </div>
+              )
+            })}
         </>
       }
-    </>
+    </div>
   )
 }
