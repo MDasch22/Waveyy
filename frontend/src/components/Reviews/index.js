@@ -47,7 +47,7 @@ export default function Reviews() {
       </div>
       {!reviews.length &&
         <>
-          <h2> Doest seem to be any reviews yet... why don't you start us off!</h2>
+          <h2  style={{color:'white'}}> Doest seem to be any reviews yet... why don't you start us off!</h2>
         </>
       }
       {sessionUser &&
@@ -55,7 +55,7 @@ export default function Reviews() {
       }
       {!sessionUser &&
       <div className='notLoggedIn'>
-        <label>
+        <label  style={{color:'white'}}>
           Want to leave a review?
         </label>
         <LoginFormModal />
