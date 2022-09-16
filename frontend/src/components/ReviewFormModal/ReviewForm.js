@@ -54,14 +54,14 @@ export default function ReviewForm(props) {
         <form className="reviewForm" onSubmit={handleSubmit}>
           {hasSubmitted && validationErrors.length > 0 && (
             <div className="errorHandling">
-              <div className="errorTitle">
-                Lets fix these up before you're done! 👍:
+              <div style={{color:'white'}} className="errorTitle">
+                Lets fix these up before you're done!:
               </div>
               <ul className="errors">
                 {validationErrors.map((error) => (
-                  <ul key={error} id="error">
+                  <ul style={{color:'white'}} key={error} id="error">
                     <i className="fas fa-spinner fa-pulse"></i>
-                    {error}
+                     {error}
                   </ul>
                 ))}
               </ul>
@@ -73,7 +73,7 @@ export default function ReviewForm(props) {
               const ratingVal = index + 1;
 
               return (
-                <label key={index}>
+                <label className="starr" key={index}>
                   <input
                     type="radio"
                     id="radioBttn"
@@ -81,19 +81,21 @@ export default function ReviewForm(props) {
                     value={ratingVal}
                     onClick={() => setRating(ratingVal)}
                   />
-                  <FaStar
-                    className="star"
-                    color={
-                      ratingVal <= (hover || rating) ? "#ffc107" : "#e4e5e9"
-                    }
-                    size={20}
-                    onMouseEnter={() => setHover(ratingVal)}
-                    onMouseLeave={() => setHover(null)}
-                  />
+                  <div className="five-sttar">
+                    <FaStar
+                      className="star"
+                      color={
+                        ratingVal <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                      }
+                      size={25}
+                      onMouseEnter={() => setHover(ratingVal)}
+                      onMouseLeave={() => setHover(null)}
+                    />
+                  </div>
                 </label>
               );
             })}
-            <label> {!rating ? 0 : rating} / 5</label>
+            <label id="rating-out-of"> {!rating ? 0 : rating} / 5</label>
           </div>
           <label className="ratingLabel">Leave your thoughts: </label>
           <textarea

@@ -119,8 +119,8 @@ export default function Reviews() {
                 <div>
                   { sessionUser?.id === review.userId &&
                     (
-                      <>
-
+                      <div className='delete-container'>
+                          <div style={{opacity: 0}}>No</div>
                           <button
                             id="deleteReview"
                             onClick={() => dispatch(thunkDeleteReview(review.id))}
@@ -129,7 +129,7 @@ export default function Reviews() {
                             Delete
                           </button>
 
-                      </>
+                      </div>
                     )
                   }
                 </div>
