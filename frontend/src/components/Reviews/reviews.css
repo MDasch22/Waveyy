@@ -53,7 +53,7 @@
   border: 0;
   color: white;
   font-size: 15px;
-  transform: translateX(65rem);
+  /* transform: translateX(65rem); */
 }
 
 #deleteReview:hover{
