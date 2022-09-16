@@ -1,6 +1,9 @@
+
 import { csrfFetch } from './csrf'
 
 //--------------DEFINE TYPES-----------------//
+  const GET_ALL_REVIEWS = 'reviews/getAllReviews'
+
   //GET ALL REVIEWS
   const GET_REVIEWS = 'reviews/getReviews'
 
@@ -11,6 +14,13 @@ import { csrfFetch } from './csrf'
   const DELETE_REVIEW = 'reviews/deleteReview'
 
 //--------------ACTION CREATOR-----------------//
+
+const actionGetAllReviews = (reviews) => {
+  return {
+     type: GET_ALL_REVIEWS,
+     reviews
+   }
+ }
 
   //GET ALL REVIEWS
 const actionGetReviews = (reviews) => {
@@ -38,6 +48,17 @@ const actionDeleteReviews = (reviewId) => {
 
 
 //--------------  THUNK  -----------------//
+
+export const thunkGetEveryReview = () => async dispatch => {
+  const response = await csrfFetch(`/api/reviews/all/reviews`);
+  if(response.ok) {
+    const data = await response.json();
+    dispatch(actionGetAllReviews(data));
+    return response;
+  }
+  return await response.json()
+};
+
 
 export const thunkGetAllReviews = (beachId) => async dispatch => {
   const response = await csrfFetch(`/api/beaches/${beachId}/reviews`);
@@ -82,6 +103,13 @@ const reviews = (state = {}, action) => {
   let newState = {...state}
 
   switch(action.type){
+    case GET_ALL_REVIEWS:
+      newState = {}
+      action.reviews.forEach(review => {
+        newState[review.id] = review
+      })
+      return newState
+
     case GET_REVIEWS:
       newState = {}
       action.reviews.forEach(review => {

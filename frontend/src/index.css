@@ -9,12 +9,15 @@ body {
 }
 
 html {
-  background-image: url("https://i.postimg.cc/ZYNksDLb/waveyybackground.jpg");
+  /* background-image: url("https://i.postimg.cc/ZYNksDLb/waveyybackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center ;
   background-attachment: fixed;
   color: white;
   margin: 0%;
-  padding: 0%;
+  padding: 0%; */
+  background-color: #222;
+  scroll-behavior: smooth;
+
 }

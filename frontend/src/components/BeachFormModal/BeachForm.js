@@ -97,7 +97,7 @@ export default function BeachForm(props) {
           {hasSubmitted && validationErrors.length > 0 && (
             <div className="errorHandling">
               <div className="errorTitle">
-                The following errors were found 😡:
+                The following errors were found:
               </div>
               <ul className='errors'>
                 {validationErrors.map((error) => (

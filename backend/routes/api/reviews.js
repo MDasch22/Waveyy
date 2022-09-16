@@ -1,9 +1,15 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { requireAuth } = require('../../utils/auth');
-const { Beach, User, Review} = require('../../db/models')
+const { Beach, User, Review} = require('../../db/models');
 
 const router = express.Router()
+
+router.get('/all/reviews', async(req, res,) => {
+  const reviews = await Review.findAll({
+  })
+  return res.json(reviews)
+})
 
 
 //----------------DELETE REVIEW------------------//

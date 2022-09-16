@@ -5,6 +5,7 @@ import { thunkGetAllBeaches } from '../../store/beaches';
 import CreateBeachModal from '../BeachFormModal';
 import BeachSlider from '../BeachSlider';
 import { SliderData } from '../BeachSlider/sliderData'
+import SplashBeach from '../SplashPageBeach';
 import './home.css'
 
 export default function Home() {
@@ -23,28 +24,21 @@ export default function Home() {
 
   return (
     <div className='homePage'>
-      <h1 className='homeTitle'> Welcome to Waveyy </h1>
       <div className='slider-content'>
         <BeachSlider slides={SliderData}/>
       </div>
+      <div className='waveyy-intro'>
+        <p className='welcome-intro'>Welcome to Waveyy</p>
+      </div>
         {!sessionUser ?
           <>
-            <h2 className='noSessionHeader'> Find your Beach </h2>
+            <p className='noSessionHeader'> Find your Beach </p>
             <div className='homeCard'>
               <div className='beach-cards-container'>
               {beachArr.slice(0, 6).map(beach => {
                 return (
-                    <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
-                      <div className="homeBeachCard" key={beach.id}>
-                        <div key={beach.id} className='homeContainer'>
-                          <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
-                          <div id="beachDetails">
-                            <h3 id="beachContent">{beach.title}</h3>
-                            <p id="beachLocation">{beach.city} {beach.country}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                  <SplashBeach beach={beach} />
+
                   )
                 })}
               </div>
@@ -52,34 +46,14 @@ export default function Home() {
           </>
           :
           <>
-            <div className='create-beach-modal'>
-              <div id="create-modal">
-                <CreateBeachModal />
-              </div>
-            </div>
-            <div className='or'>
-              <hr id="left-line"></hr>
-              <p id="or-tag"><b>OR</b></p>
-              <hr id="right-line"></hr>
-            </div>
             <div className='homeCard'>
               <div className='sessionUser-home'>
-                <h2 className='homeHeader'> Checkout these beaches posted by other users </h2>
+                <p className='homeHeader'> Checkout these beaches posted by other users </p>
               </div>
               <div className='beach-cards-container'>
                 {noSession.map(beach => {
                 return (
-                    <Link to={`/beaches/${beach.id}`} id='cardLink'  key={beach.id}>
-                      <div className="homeBeachCard" key={beach.id}>
-                        <div key={beach.id} className='homeContainer'>
-                          <img src={beach.coverImg} alt="coverImg" id="beachHomeImg"></img>
-                          <div id="beachDetails">
-                            <h3 id="beachContent">{beach.title}</h3>
-                            <p id="beachLocation">{beach.city} {beach.country}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                    <SplashBeach beach={beach} />
                   )
                 })}
               </div>

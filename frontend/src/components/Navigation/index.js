@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 import SearchBar from '../SearchBar/Index';
+import CreateBeachModal from '../BeachFormModal';
 
 
 function Navigation({ isLoaded }){
@@ -14,7 +15,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <ProfileButton user={sessionUser} />
+        <CreateBeachModal />
+      </>
     );
   } else {
     sessionLinks = (
@@ -31,15 +35,18 @@ function Navigation({ isLoaded }){
     <ul className='navBar'>
         <NavLink exact to="/" id="logo">
             <img src='https://i.postimg.cc/cCj31P7X/avatars-zw-Nz-H3c8szb-ZEmg-D-h-APmvw-t500x500.jpg' alt="logoImg" id="logoImg"></img>
+            {/* <p id="waveyy">Waveyy</p> */}
         </NavLink>
         <SearchBar />
         <div>
           {isLoaded && sessionLinks}
-          <NavLink to="/beaches">
-            <button id="beachesLink">
-              Explore
-            </button>
-          </NavLink>
+          <>
+            <NavLink to="/beaches">
+              <button id="beachesLink">
+                Explore
+              </button>
+            </NavLink>
+          </>
         </div>
     </ul>
   );

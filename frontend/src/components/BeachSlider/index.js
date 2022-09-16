@@ -38,14 +38,14 @@ export default function BeachSlider({slides}) {
 
   return (
     <section className='slider'>
-      <FaArrowAltCircleLeft className='leftArrow' onClick={prevSlide}/>
-      <FaArrowAltCircleRight className='RightArrow' onClick={nextSlide}/>
+      {/* <FaArrowAltCircleLeft className='leftArrow' onClick={prevSlide}/>
+      <FaArrowAltCircleRight className='RightArrow' onClick={nextSlide}/> */}
       {SliderData.map((slide, index) => {
         return (
             <div className={index === current ? 'slide-active': 'slide'} key={index}>
 
               {index === current && (
-                   <img src={slide.image} alt='travelImg' className='sliderImg' style={{width: 1100, height: 800}}></img>
+                   <img src={slide.image} alt='travelImg' className='sliderImg' ></img>
                 )}
             </div>
           )
