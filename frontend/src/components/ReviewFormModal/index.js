@@ -8,7 +8,7 @@ function CreateReviewModal() {
 
   return (
     <>
-      <button className="createReviewBttn" onClick={() => setShowModal(true)} id='writeReviewBttn'>Write a review</button>
+      <button onClick={() => setShowModal(true)} id='writeReviewBttn'>Write a review</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ReviewForm trigger={showModal} setTrigger={setShowModal}/>

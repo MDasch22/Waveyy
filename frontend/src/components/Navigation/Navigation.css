@@ -166,9 +166,11 @@
 
 #writeReviewBttn {
   padding: 3px 5px;
-  border-radius: 20px;
+  border-radius: 5px;
   transition: .3s;
+  width: 100px;
   background-color: #929496;
+  margin-bottom: 10px;
 }
 
 #writeReviewBttn:hover{
