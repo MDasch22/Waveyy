@@ -3,8 +3,9 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  text-shadow: 0 0 3px #8b8989, 0 0 5px #282829;
+  /* text-shadow: 0 0 3px #8b8989, 0 0 5px #fefeff; */
   align-items: center;
+  color: white;
 }
 
 #beachDetailImg{

@@ -40,7 +40,7 @@ export default function Reviews() {
   return (
     <>
       <div id="review-header">
-        <h1>Reviews </h1>
+        <h1 style={{color:'white'}}>Reviews </h1>
         <div>
         {rating()}
         </div>

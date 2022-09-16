@@ -19,7 +19,10 @@
   border-radius: 8px;
   margin: 15px 0;
   margin-bottom: -400px;
+  color: white;
 }
+
+
 
 #deleteReview {
   margin-right: 10px;
